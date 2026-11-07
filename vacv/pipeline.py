@@ -12,6 +12,7 @@ from .chemistry import POLICY, featurize
 from .data import TARGET, check_submission, load_inputs, save_json, sha256
 from .models import fit_model, predict_model
 from .validation import make_folds, metrics
+from .target_status import target_status
 
 
 def environment() -> dict:
@@ -207,4 +208,7 @@ def predict(model_path: str, test_path: str, sample_path: str, output: str):
     destination.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame({"index": test["index"], TARGET: pred}).to_csv(destination, index=False)
     structures.assign(index=test["index"], used_fallback=~structures.valid).to_csv(destination.with_suffix(".audit.csv"), index=False)
-    return check_submission(destination, sample_path)
+    result = check_submission(destination, sample_path)
+    result['target_review'] = target_status(bundle['manifest'])
+    save_json(destination.with_suffix('.metadata.json'), result)
+    return result

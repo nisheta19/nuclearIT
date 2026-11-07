@@ -50,3 +50,5 @@ def test_batch_predictions_are_paired_with_rows_ignore_metadata_and_do_not_fill_
     assert exported[2]['index']=="'=HYPERLINK(1)"
     assert exported[1]['predicted_si']=='' and exported[0]['index']=='001'
     assert result['ignored_columns']==['CC50','IC50']
+    assert result['target_review']['status']=='not_reviewed'
+    assert {r['target_review_status'] for r in exported}=={'not_reviewed'}

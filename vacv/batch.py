@@ -7,6 +7,7 @@ import numpy as np
 from .chemistry import featurize
 from .diagnostics import tanimoto
 from .models import predict_model
+from .target_status import target_status
 
 MAX_ROWS = 2000
 MAX_BYTES = 2 * 1024 * 1024
@@ -68,6 +69,7 @@ def result_csv(rows):
 
 
 def batch_predict(bundle,train_st,train_x,text,run_name,model_sha256):
+    review = target_status(bundle.get('manifest', {}))
     rows,ignored=parse_csv(text)
     values=[row['SMILES'].strip() for row in rows]
     oversized=[len(value)>2000 for value in values]
@@ -88,8 +90,9 @@ def batch_predict(bundle,train_st,train_x,text,run_name,model_sha256):
             'status':'ok' if ok else 'invalid_smiles','error':'' if ok else 'SMILES длиннее 2000 символов' if oversized[i] else 'Пустой или неразбираемый SMILES',
             'max_similarity':float(similarities[i]) if ok else None,'coverage_band':coverage,
             'training_matches':int(counts.get(structure.structure_id,0)) if ok else 0,
-            'model_name':bundle['name'],'run_name':run_name,'model_sha256':model_sha256,'dataset_version':bundle['config']['dataset_version']})
+            'model_name':bundle['name'],'run_name':run_name,'model_sha256':model_sha256,'dataset_version':bundle['config']['dataset_version'],
+            'train_sha256':review['train_sha256'], 'target_review_status':review['status'], 'target_review_note':review['message']})
     return {'rows':output,'total':len(rows),'valid':int(valid.sum()),'invalid':int((~valid).sum()),
             'below_0_3':int((similarities<.3).sum()),'below_0_5':int((similarities<.5).sum()),
-            'ignored_columns':ignored,'csv':result_csv(output),
-            'note':'Сходство описывает покрытие обучения, не уверенность. Для ошибочных SMILES прогноз отсутствует. Строки не добавляются в train. Потенциальные формулы в текстовых полях CSV экранированы апострофом.'}
+            'ignored_columns':ignored,'csv':result_csv(output),'target_review':review,
+            'note':review['message']+' Сходство описывает покрытие обучения, не уверенность. Для ошибочных SMILES прогноз отсутствует. Строки не добавляются в train. Потенциальные формулы в текстовых полях CSV экранированы апострофом.'}

@@ -8,6 +8,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from .target_status import target_status
+
 TARGET = "SI VACV"
 
 
@@ -69,6 +71,7 @@ def load_inputs(config: dict):
         "features_from": ["SMILES"], "external_data_used": False,
         "sample_values_used": False, "target_changes": 0,
     }
+    manifest['target_review'] = target_status(manifest)
     return train, test, manifest
 
 

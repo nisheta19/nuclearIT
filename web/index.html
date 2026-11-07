@@ -15,8 +15,13 @@
   </header>
   <main id="main">
     <div id="connection-error" class="error" role="alert" hidden></div>
+    <aside id="target-review-notice" class="target-review-notice" aria-labelledby="target-review-title" hidden>
+      <h2 id="target-review-title">Смысл части меток не подтверждён</h2>
+      <p id="target-review-message"></p>
+      <details><summary>Что проверено и что нужно уточнить</summary><p id="target-review-comparison"></p><p id="target-review-question" hidden>Организаторам: коллега сообщил, что в двух версиях train одни и те же 81 строки без IC50 имеют SI = 0 и SI = 10000. Какая версия актуальна и что означает 10000?</p><div id="target-review-links" class="target-review-links" hidden><a href="/download/target_version_investigation.md" download>Скачать проверку источника</a><a href="/download/labels_for_clarification.csv" download>Скачать 81 строку для уточнения</a></div></details>
+    </aside>
     <section id="predict-view" aria-labelledby="page-title">
-      <div class="intro"><div><h1 id="page-title">От структуры к прогнозу.</h1><p>Введите SMILES, чтобы получить модельную оценку индекса селективности против VACV и увидеть похожие структуры в обучении.</p></div><div class="experiment-note"><span class="status-dot"></span><span>Модель готова<br><small id="run-label">Загружаем сведения…</small></span></div></div>
+      <div class="intro"><div><h1 id="page-title">От структуры к прогнозу.</h1><p>Введите SMILES, чтобы получить модельную оценку индекса селективности против VACV и увидеть похожие структуры в обучении.</p></div><div class="experiment-note"><span class="status-dot"></span><span>Исследовательская модель<br><small id="run-label">Загружаем сведения…</small></span></div></div>
       <div class="workspace">
         <section class="input-area" aria-labelledby="input-heading">
           <div class="section-heading"><h2 id="input-heading">Ваша молекула</h2><span class="quiet">Только структурные признаки</span></div>
@@ -67,7 +72,7 @@
       </section>
     </section>
     <section id="quality-view" aria-labelledby="quality-title" hidden>
-      <div class="intro"><div><h1 id="quality-title">Качество с оговорками.</h1><p>Подбор параметров проходит внутри обучающих фолдов. Здесь показаны результаты внешней проверки в исходной шкале SI.</p></div><a href="/download/report.md" download class="secondary download">Скачать отчёт</a></div>
+      <div class="intro"><div><h1 id="quality-title">Качество с оговорками.</h1><p>Подбор параметров проходит внутри обучающих фолдов. MSE рассчитан в исходной шкале по сохранённым меткам train, смысл части которых ещё не установлен.</p></div><a href="/download/report.md" download class="secondary download">Отчёт исходного запуска</a></div>
       <div class="decision"><h2 id="decision-title">Загружаем результат…</h2><p id="decision-description"></p></div>
       <div class="table-heading"><h2>Сравнение стратегий</h2><span class="quiet">MSE · меньше лучше</span></div>
       <p class="scroll-hint">Таблица шире экрана. Листайте вбок, чтобы увидеть обе метрики; с клавиатуры — Tab и стрелки.</p>

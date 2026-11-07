@@ -20,6 +20,7 @@ from .data import TARGET, sha256
 from .diagnostics import tanimoto
 from .models import predict_model
 from .pipeline import environment
+from .target_status import target_status
 
 
 class Workbench:
@@ -38,6 +39,7 @@ class Workbench:
         self.model_sha256 = sha256(self.run_dir / 'model.joblib')
         self.review_dir = self.run_dir.with_name(self.run_dir.name + '-review')
         self.medical_dir = self.web_root.parent / 'artifacts' / 'medical-review-v4'
+        self.target_review = target_status(self.bundle['manifest'])
         self.summary = self._summary()
 
     def _summary(self):
@@ -63,6 +65,7 @@ class Workbench:
             "promotion_checks": selection.get("promotion_checks", []),
             "reference_strategy":selection.get('reference_strategy','baseline_ridge'), "reference_label":selection.get('reference_label','Исходный Ridge'),
             "reliability":reliability, "medical_review":medical, "range_comparison":ranges, "model_sha256":self.model_sha256,
+            "target_review": self.target_review,
             "audit": audit, "leaderboard": table, "diagnostics": diagnostics,
             "examples": [{"label": f"Молекула test · {test.iloc[i]['index']}", "smiles": test.iloc[i].SMILES} for i in (0, min(10, len(test)-1))],
             "input_features": "Только SMILES", "external_data_used": False,
@@ -88,6 +91,7 @@ class Workbench:
         return {"predicted_si": float(prediction[0]), "raw_prediction": float(raw[0]), "clipped_to_zero": bool(raw[0] < 0),
             "canonical_smiles": canonical, "molecule_image": "data:image/svg+xml;base64," + base64.b64encode(svg).decode(),
             "model_name": self.bundle["name"], "max_similarity": float(similarities[nearest[0]]),
+            "target_review": self.target_review,
             "training_matches": int((self.train_st.structure_id == structure.structure_id.iloc[0]).sum()),
             "neighbors": [{"row_id": self.train.iloc[i].train_row_id, "similarity": float(similarities[i]), "observed_si": float(self.train.iloc[i][TARGET])} for i in nearest],
             "similarity_note": "Сходство со структурами train, не вероятность правильного ответа."}
@@ -141,6 +145,9 @@ def make_server(run_dir, port=8765):
                 routes['/download/range_comparison.csv']=(app.review_dir/'range_comparison.csv','text/csv; charset=utf-8')
             if app.summary.get('medical_review'):
                 routes['/download/medical_review_queue.csv']=(app.medical_dir/'medical_review_queue.csv','text/csv; charset=utf-8')
+            if app.summary.get('target_review', {}).get('report_url'):
+                routes['/download/target_version_investigation.md']=(app.web_root.parent/'docs'/'target_version_investigation.md','text/markdown; charset=utf-8')
+                routes['/download/labels_for_clarification.csv']=(app.web_root.parent/'data'/'review'/'target_versions'/'labels_for_clarification.csv','text/csv; charset=utf-8')
             if path not in routes or not routes[path][0].is_file():
                 self.json({"error": "Not found"}, 404)
                 return

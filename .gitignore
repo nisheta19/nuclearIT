@@ -19,6 +19,8 @@ data/received/
 dist/*
 !dist/vacv-workbench-v4.zip
 !dist/vacv-workbench-v4.manifest.json
+!dist/vacv-workbench-v4.1.zip
+!dist/vacv-workbench-v4.1.manifest.json
 .impeccable/review/*
 !.impeccable/review/desktop.png
 !.impeccable/review/mobile.png

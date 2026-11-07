@@ -24,13 +24,21 @@ Local Windows workspace, current organizer dataset hakathonMiphi, 320 train rows
 
 ## Capabilities and Constraints
 
-Only SMILES-derived features. No concentration-derived features, no external data, no label repair. MSE in original SI scale. Prediction is an experimental model output, not measured activity. Exact structures are grouped for validation. Dataset identity is pinned by SHA-256. No publication or submission to Kaggle.
+Only SMILES-derived features. No concentration-derived features, no external data, no label repair. MSE in original SI scale. Prediction is an experimental model output, not measured activity. Exact structures are grouped for validation. Dataset identity is pinned by SHA-256. Project stored in the private GitHub repository nisheta19/nuclearIT; no submission to Kaggle.
 
 ## Evidence on Hand
 
 Real baseline OOF, model, audits and reports in artifacts/baseline-original. The completed, promoted run artifacts/advanced-v4 supplies the current model, nested validation and reports, with artifacts/kernel-v3 retained as its comparator. Conditional paired cluster-bootstrap intervals do not cover all training/tuning uncertainty; one scaffold interval includes zero. OOF evaluates the selection procedure, not one fixed final configuration. The pending medical queue has 89 records; it contains questions, not medical conclusions. No invented metrics or scientific confidence claims.
 
 ## Product Principles
+
+As of 8 November 2026, all 81 SI=10000 records coincide with missing IC50 in the
+byte-verified source archive. Their semantics remain unresolved. A colleague reports
+a zero-label alternative; that file has not been received here. Historical v4 results
+remain reproducible but are conditional on the disputed labels. Show the hash-bound
+review status in every prediction workflow and export. Do not replace labels or
+present cross-version MSE as model improvement. The original archive and reproducible
+investigation are included in the project; organizer clarification is pending.
 
 - Show the structure next to the prediction.
 - State which experiment produced the number.

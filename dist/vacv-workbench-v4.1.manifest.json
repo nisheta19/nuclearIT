@@ -1,0 +1,10 @@
+{
+  "archive": "vacv-workbench-v4.1.zip",
+  "sha256": "fdcd43d905df1107db1f52bd6778f3f5abf2ef2b759960430a24aab2a9fd9abf",
+  "bytes": 6336649,
+  "files": 287,
+  "date": "2026-11-08",
+  "model_run": "advanced-v4",
+  "change": "Target provenance disclosure; model and labels unchanged",
+  "target_review_status": "unresolved_target_semantics"
+}

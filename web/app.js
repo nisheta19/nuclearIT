@@ -24,15 +24,24 @@ async function initialize() {
     const response = await fetch('/api/summary');
     if (!response.ok) throw new Error('Сведения о модели недоступны. Перезапустите локальное приложение.');
     summary = await response.json();
+    const review = summary.target_review;
+    if (review) {
+      $('target-review-notice').hidden = false;
+      $('target-review-message').textContent = review.message;
+      $('target-review-comparison').textContent = review.comparison_note;
+      $('target-review-links').hidden = !review.report_url;
+      $('target-review-question').hidden = !review.report_url;
+    }
     $('run-label').textContent = `${summary.run_name} · ${summary.audit.train_rows} строк train`;
     $('dataset-description').textContent = `${summary.audit.train_rows} наблюдений из исходного набора организаторов. Нулевых меток: ${summary.audit.zero_targets}; меток 10000: ${summary.audit.targets_10000}. Все сохранены без исправлений. Внешние данные не используются.`;
     const referenceLabel = summary.reference_label || 'Исходный Ridge';
-    $('decision-title').textContent = summary.promoted ? 'Новая модель прошла критерии выпуска' : `Для прогнозов сохранена предыдущая модель`;
+    $('decision-title').textContent = review ? 'Историческое сравнение на одной версии меток' : summary.promoted ? 'Новая модель прошла критерии выпуска' : `Для прогнозов сохранена предыдущая модель`;
     const baseline = summary.leaderboard.find(r => r.model === summary.reference_strategy);
     const candidateId = summary.comparison_candidate || 'tuned_ridge';
     const tuned = summary.leaderboard.find(r => r.model === candidateId);
     const checks = summary.promotion_checks || [];
     let decision = summary.promoted ? 'Процедура подбора прошла критерии выпуска. Прогнозы рассчитаны новой моделью.' : `Подбор не прошёл все критерии выпуска. Для прогнозов используется: ${referenceLabel}.`;
+    if (review) decision = `Прогнозы рассчитаны сохранённой моделью ${summary.run_name}. Статистические критерии исходного запуска не подтверждают смысл меток и биологическую точность.`;
     if (checks.length) {
       decision += ` Сравнение с «${referenceLabel}»: ` + checks.map(c => `${c.phase === 'historical' ? 'прежние' : 'дополнительные'} разбиения, ${c.scheme === 'structure' ? 'структуры' : 'каркасы'}: ${c.improvement_percent >= 0 ? 'снижение' : 'рост'} MSE ${number(Math.abs(c.improvement_percent),2)}%`).join('; ') + '.';
     } else if (tuned && baseline) {
@@ -43,7 +52,7 @@ async function initialize() {
     for (const item of summary.leaderboard) $('score-rows').append(row([(names[item.model] || item.model) + (item.model === summary.strategy ? ' · используется' : ''), number(item.structure_mse_mean), number(item.scaffold_mse), number(item.structure_mae), number(item.scaffold_mae)], item.model === summary.strategy ? 'active' : item.model === candidateId ? 'search' : ''));
     if (checks.length) $('score-note').textContent = 'В таблице — прежние разбиения: среднее трёх по структурам и одно по каркасам. Результаты дополнительных разбиений приведены выше и в отчёте. Все оценки получены на одном train.';
     const extreme = summary.diagnostics.largest_target_review;
-    $('extreme-description').textContent = `Строка ${extreme.row_id}: истинный SI ${number(extreme.target,3)}, отложенный прогноз ${number(extreme.primary_oof_prediction,2)}. На первом разбиении она даёт ${number(extreme.primary_error_share*100,1)}% суммарной квадратичной ошибки. Метка сохранена; первичная публикация ещё не проверена.`;
+    $('extreme-description').textContent = `Строка ${extreme.row_id}: метка SI ${number(extreme.target,3)}, отложенный прогноз ${number(extreme.primary_oof_prediction,2)}. На первом разбиении она даёт ${number(extreme.primary_error_share*100,1)}% суммарной квадратичной ошибки. Метка сохранена; первичная публикация ещё не проверена.`;
     $('duplicates-description').textContent = `Из ${summary.diagnostics.duplicate_groups} групп повторяющихся структур в ${summary.diagnostics.conflicting_groups} есть существенные расхождения меток, ещё в ${summary.diagnostics.rounding_groups} — различия масштаба округления. Все строки сохранены и группируются при валидации.`;
     $('validation-note').textContent = summary.validation_note;
     if (summary.reliability) {
@@ -106,6 +115,7 @@ $('predict-form').addEventListener('submit', async event => {
     $('similarity-value').textContent = number(result.max_similarity,3);
     $('canonical-smiles').textContent = result.canonical_smiles;
     let note = result.clipped_to_zero ? 'Отрицательный ответ модели ограничен нулём. Это не означает подтверждённую неактивность.' : 'Модельная оценка в исходной шкале SI.';
+    if (result.target_review) note += ' Смысл части обучающих меток не подтверждён; результат исследовательский.';
     if (result.training_matches) note += ` Такая структура встречается в train (${result.training_matches} наблюд.). Прогноз вычислен моделью, метка не скопирована.`;
     if (result.max_similarity < .3) note += ' Близких структур в train мало; для этого случая особенно важна экспериментальная проверка.';
     $('prediction-note').textContent = note;

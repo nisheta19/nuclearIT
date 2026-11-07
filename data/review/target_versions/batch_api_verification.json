@@ -1,0 +1,16 @@
+{
+  "real_test_rows": 597,
+  "http_batch_matches_submission": true,
+  "csv_export_matches_submission": true,
+  "single_matches_batch": true,
+  "ignored_test_columns": [
+    "Title",
+    "CC50_uM",
+    "IC50_uM_VACV",
+    "strain",
+    "Culture"
+  ],
+  "maximum_2000_rows_passed": true,
+  "target_status_in_api_and_export": true,
+  "elapsed_seconds": 2.89
+}

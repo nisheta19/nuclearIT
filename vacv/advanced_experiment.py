@@ -16,6 +16,7 @@ from .pipeline import audit
 from .reliability import compare_oof
 from .robust_experiment import benchmark_table, promotion_check
 from .validation import make_folds, metrics
+from .target_status import require_same_dataset
 
 
 def advanced_run(config, output):
@@ -29,6 +30,7 @@ def advanced_run(config, output):
     output.mkdir(parents=True, exist_ok=False)
     save_json(output/'config.json', config)
     train, test, structures, test_st, _, _, manifest, _ = audit(config,output)
+    require_same_dataset(manifest, json.loads((reference/'manifest.json').read_text(encoding='utf-8')))
     source = output/'source_snapshot'/'vacv'
     source.mkdir(parents=True)
     for path in Path(__file__).parent.glob('*.py'):

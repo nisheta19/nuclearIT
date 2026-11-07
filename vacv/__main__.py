@@ -1,5 +1,6 @@
 import argparse
 import json
+import sys
 from pathlib import Path
 
 from .pipeline import predict, run
@@ -23,6 +24,10 @@ def main():
         result = predict(args.model, args.test, args.sample, args.output)
     else:
         config = json.loads(Path(args.config).read_text(encoding="utf-8"))
+        from .target_status import target_status
+        review = target_status({'dataset_version':config['dataset_version'],
+                                'inputs':{'train':{'sha256':config.get('input_sha256',{}).get('train')}}})
+        print('Статус меток: '+review['message'], file=sys.stderr)
         if args.command == "advance":
             from .advanced_experiment import advanced_run
             result = advanced_run(config,args.output)

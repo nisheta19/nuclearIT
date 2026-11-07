@@ -12,6 +12,7 @@ OUT = ROOT / ".impeccable" / "review"
 OUT.mkdir(parents=True, exist_ok=True)
 parser = argparse.ArgumentParser()
 parser.add_argument('--url', default='http://127.0.0.1:8765')
+parser.add_argument('--report', type=Path, default=ROOT/'artifacts'/'browser_verification.json')
 args = parser.parse_args()
 
 with sync_playwright() as runner:
@@ -23,6 +24,18 @@ with sync_playwright() as runner:
         page.on("pageerror", lambda error: errors.append(str(error)))
         page.goto(args.url, wait_until="networkidle")
         summary = page.request.get(args.url + '/api/summary').json()
+        review = summary['target_review']
+        assert review['status'] == 'unresolved_target_semantics' and review['disputed_rows'] == 81
+        expect(page.locator('#target-review-notice')).to_be_visible()
+        expect(page.locator('#target-review-message')).to_contain_text('81 из 320')
+        page.locator('#target-review-notice summary').click()
+        expect(page.locator('#target-review-question')).to_be_visible()
+        with page.expect_download() as event:
+            page.locator('a[href="/download/labels_for_clarification.csv"]').click()
+        labels=list(csv.DictReader(io.StringIO(Path(event.value.path()).read_text(encoding='utf-8-sig'))))
+        assert len(labels)==81 and {r['train_sha256'] for r in labels}=={review['train_sha256']}
+        assert page.request.get(args.url+review['report_url']).status==200
+        page.locator('#target-review-notice summary').click()
         page.evaluate("() => document.fonts.ready")
         assert page.locator("#connection-error").is_hidden()
         assert page.locator("#empty-state").is_visible()
@@ -59,7 +72,7 @@ with sync_playwright() as runner:
         assert page.locator("#quality-view").is_visible()
         assert page.locator("#score-rows tr").count() == len(summary['leaderboard'])
         assert page.locator("#score-rows tr.active").count() == 1
-        assert ('Новая модель' in page.locator('#decision-title').inner_text()) == summary['promoted']
+        assert page.locator('#decision-title').inner_text() == 'Историческое сравнение на одной версии меток'
         if name == "mobile":
             assert page.locator("#quality-view .scroll-hint").first.is_visible()
             assert page.locator(".chart-scroll[tabindex='0']").count() == 2
@@ -97,6 +110,8 @@ with sync_playwright() as runner:
         assert len(downloaded)==75 and downloaded[0]['index']=='000'
         assert downloaded[4]['predicted_si']=='' and downloaded[0]['run_name']==summary['run_name']
         assert downloaded[0]['model_sha256']==summary['model_sha256']
+        assert downloaded[0]['train_sha256']==review['train_sha256']
+        assert downloaded[0]['target_review_status']=='unresolved_target_semantics'
         page.locator('#batch-file').set_input_files({'name':'utf8.csv','mimeType':'text/csv','buffer':b'SMILES\n\xff\n'})
         assert page.locator('#batch-results').is_hidden()
         assert page.locator('#batch-download').get_attribute('href') is None
@@ -114,5 +129,6 @@ with sync_playwright() as runner:
         results.append({"run":summary['run_name'], "viewport": name, "width": width, "height": height, "empty_invalid_valid_inputs": True, "stale_result_cleared_on_edit_and_example": True, "run_caption_visible": True, "molecule_rendered": True, "neighbors": 3, "quality_rows": len(summary['leaderboard']), "batch_csv_upload_export_pagination_filters_errors_stale_state":True, "reliability_rows":4, "range_rows":14, "medical_queue_download":True, "horizontal_page_overflow": False, "js_errors": errors})
         page.close()
     browser.close()
-    (ROOT / "artifacts" / "browser_verification.json").write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+    args.report.parent.mkdir(parents=True,exist_ok=True)
+    args.report.write_text(json.dumps({'target_notice_and_downloads_checked':True,'viewports':results}, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(results, ensure_ascii=False, indent=2))
