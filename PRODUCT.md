@@ -24,7 +24,7 @@ Local Windows workspace, current organizer dataset hakathonMiphi, 320 train rows
 
 ## Capabilities and Constraints
 
-Only SMILES-derived features. No concentration-derived features, no external data, no label repair. MSE in original SI scale. Prediction is an experimental model output, not measured activity. Exact structures are grouped for validation. Dataset identity is pinned by SHA-256. Project stored in the private GitHub repository nisheta19/nuclearIT; no submission to Kaggle.
+Only SMILES-derived features. No concentration-derived features or label repair. External training data require explicit approval and pinned provenance. On 8 November 2026 the user approved reconstruction of three exact McGuigan records (8i, 8j, 8m) from the supplied final review log. Two bounded records remain excluded. MSE in original SI scale, on the unchanged organizer evaluation cohort. Prediction is an experimental model output, not measured activity. Exact structures and scaffolds are isolated in both inner and outer validation, including external training records. Dataset identity is pinned by SHA-256. Project stored in the public GitHub repository nisheta19/nuclearIT without PDF articles; no submission to Kaggle.
 
 ## Evidence on Hand
 
@@ -32,11 +32,19 @@ Real baseline OOF, model, audits and reports in artifacts/baseline-original. The
 
 ## Product Principles
 
+The current interface opens artifacts/augmented-v5. The three-record augmentation
+experiment slightly improved structure MSE but worsened scaffold MSE in both groups
+of splits, so the selected model and submission remain byte-identical to v4. Preserve
+that distinction in all UI, API and exports. The candidate trained on 323 rows is kept
+separately. Show the approved records, provenance, evaluation cohort and release decision.
+All four conditional MSE intervals include zero. Do not claim a demonstrated gain.
+
 As of 8 November 2026, all 81 SI=10000 records coincide with missing IC50 in the
-byte-verified source archive. Their semantics remain unresolved. A colleague reports
-a zero-label alternative; that file has not been received here. Historical v4 results
+byte-verified source archive. Their semantics remain unresolved. Historical v4 results
 remain reproducible but are conditional on the disputed labels. Show the hash-bound
-review status in every prediction workflow and export. Do not replace labels or
+review status in every prediction workflow and export. The alternate 83-zero table
+has now been received: the same 320 SMILES and 81 changed targets were independently
+verified, but organizer semantics remain unresolved. Do not replace labels or
 present cross-version MSE as model improvement. The original archive and reproducible
 investigation are included in the project; organizer clarification is pending.
 

@@ -81,13 +81,22 @@ def fit_advanced(X, y, config, candidate):
             'fingerprint':{'feature_sets':specs}, 'candidate':candidate}
 
 
-def search(X, y, structure_groups, scaffold_groups, config, seed):
+def search(X, y, structure_groups, scaffold_groups, config, seed, augmentation=None):
     settings = config['advanced_search']
     candidates = grid(config)
     memberships = {name:inner_assignments(groups, settings['inner_folds'], seed)
                    for name, groups in [('structure', structure_groups), ('scaffold', scaffold_groups)]}
     bounds = np.cumsum([0] + [s['bits'] + len(s.get('descriptors', [])) for s in settings['feature_sets']])
     losses = {c['id']:{} for c in candidates}
+    # External observations train the model only; selection loss remains on organizer rows.
+    augmented_fit = {}
+    if augmentation is not None:
+        from .augmentation import eligible_external
+        organizer_groups = pd.DataFrame({'structure_id':structure_groups, 'scaffold_id':scaffold_groups})
+        for scheme, membership in memberships.items():
+            for fold in np.unique(membership):
+                keep = eligible_external(augmentation['structures'], organizer_groups.loc[membership == fold], scheme)
+                augmented_fit[(scheme, int(fold))] = (augmentation['X'][keep], augmentation['y'][keep])
     for scheme, membership in memberships.items():
         # Cache component OOF predictions. Every estimator fits only its inner training rows.
         cache = {}
@@ -100,7 +109,12 @@ def search(X, y, structure_groups, scaffold_groups, config, seed):
                 for fold in np.unique(membership):
                     held = membership == fold
                     model = TanimotoRidge(alpha) if kind == 'kernel' else TwoStageRegressor(alpha, C, settings['high_si_threshold'])
-                    model.fit(x[~held], y[~held])
+                    fit_x, fit_y = x[~held], y[~held]
+                    if augmentation is not None:
+                        extra_x, extra_y = augmented_fit[(scheme, int(fold))]
+                        fit_x = np.concatenate([fit_x, extra_x[:, bounds[i]:bounds[i+1]]])
+                        fit_y = np.concatenate([fit_y, extra_y])
+                    model.fit(fit_x, fit_y)
                     prediction[held] = model.predict(x[held])
                 cache[(i,kind,alpha,C)] = prediction
         for candidate in candidates:

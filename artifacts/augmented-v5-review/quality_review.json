@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-08",
+  "tests_passed": 68,
+  "training_model_candidate_rows": 323,
+  "active_model_training_rows": 320,
+  "outer_folds_verified": 45,
+  "external_eligibility_checks": 945,
+  "artifact_hashes_by_run": {
+    "advanced-v4": 62,
+    "augmented-v5": 75,
+    "baseline-original": 25,
+    "kernel-v3": 56,
+    "nested-v2": 51
+  },
+  "all_original_organizer_csvs_unchanged": true,
+  "selected_model_and_submission_equal_v4": true,
+  "external_user_approval": "Да, используй 3 строки из итогового журнала",
+  "bounded_records_in_training": 0,
+  "ui_review": "desktop and mobile reviewed; controls, downloads and status verified",
+  "initial_test_issues": [
+    {
+      "issue": "Synthetic test fixture omitted promotion_rule",
+      "resolution": "Fixture corrected; end-to-end test passes"
+    },
+    {
+      "issue": "One localhost negative-origin request aborted with Windows 10053 during first full suite",
+      "resolution": "Focused HTTP tests and subsequent complete 68-test suite passed; transient cause not established"
+    }
+  ],
+  "limitations": [
+    "All four conditional MSE intervals include zero",
+    "Organizer target semantics remain unresolved",
+    "Three external rows share one scaffold and publication",
+    "No independent hidden-test score or Kaggle submission"
+  ]
+}

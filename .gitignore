@@ -11,6 +11,8 @@ artifacts/*
 !artifacts/kernel-v3-review/
 !artifacts/advanced-v4/
 !artifacts/advanced-v4-review/
+!artifacts/augmented-v5/
+!artifacts/augmented-v5-review/
 !artifacts/medical-review-v4/
 !artifacts/browser_verification.json
 data/raw/*
@@ -21,6 +23,8 @@ dist/*
 !dist/vacv-workbench-v4.manifest.json
 !dist/vacv-workbench-v4.1.zip
 !dist/vacv-workbench-v4.1.manifest.json
+!dist/vacv-workbench-v5.zip
+!dist/vacv-workbench-v5.manifest.json
 .impeccable/review/*
 !.impeccable/review/desktop.png
 !.impeccable/review/mobile.png
@@ -35,3 +39,4 @@ dist/*
 *.pem
 *.key
 *.log
+*.[pP][dD][fF]

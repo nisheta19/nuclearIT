@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-08",
+  "repository": "https://github.com/nisheta19/nuclearIT",
+  "visibility": "public",
+  "authorization": "Оставь публичным: загрузи код, данные и результаты без PDF",
+  "excluded_source_files": [
+    {
+      "path": "source/data/literature/mcguigan2013.pdf",
+      "sha256": "af3a1eda5aca5ccb098af51d3fe045e8b1c6b9f2c8ab2c64a89548850c1555a8",
+      "reason": "User requested public publication without PDFs"
+    }
+  ],
+  "source_files_in_publication": 15,
+  "local_originals_preserved": true,
+  "nested_archive_policy": "No PDF entries in any nested ZIP",
+  "training_or_inference_requires_pdf": false
+}

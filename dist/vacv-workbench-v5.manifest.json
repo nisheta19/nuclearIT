@@ -1,0 +1,15 @@
+{
+  "archive": "vacv-workbench-v5.zip",
+  "sha256": "2930e65e2a511487eb9dd1e0750bbf5f90271c42722ee01ae664c5993e11eb9d",
+  "bytes": 8961653,
+  "files": 408,
+  "date": "2026-11-08",
+  "selected_model": "v4, preserved byte-for-byte",
+  "candidate_training_rows": 323,
+  "selected_training_rows": 320,
+  "external_augmentation_promoted": false,
+  "tests_passed": 68,
+  "publication_visibility": "public",
+  "pdf_included": false,
+  "nested_zip_pdf_check": "passed"
+}

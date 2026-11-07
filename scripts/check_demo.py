@@ -72,7 +72,20 @@ with sync_playwright() as runner:
         assert page.locator("#quality-view").is_visible()
         assert page.locator("#score-rows tr").count() == len(summary['leaderboard'])
         assert page.locator("#score-rows tr.active").count() == 1
-        assert page.locator('#decision-title').inner_text() == 'Историческое сравнение на одной версии меток'
+        if summary.get('augmentation'):
+            assert page.locator('#augmentation-section').is_visible()
+            assert page.locator('#augmentation-rows tr').count()==summary['augmentation']['candidate_rows']
+            expected_title='Добавления прошли четыре условия по MSE' if summary['promoted'] else 'Для прогнозов сохранена модель v4'
+            assert page.locator('#decision-title').inner_text()==expected_title
+            page.locator('#augmentation-section summary').click()
+            with page.expect_download() as event:
+                page.locator('a[href="/download/approved_external.csv"]').click()
+            extra=list(csv.DictReader(io.StringIO(Path(event.value.path()).read_text(encoding='utf-8-sig'))))
+            assert len(extra)==3 and set(extra[0])=={'train_row_id','SMILES','SI VACV'}
+            assert page.request.get(args.url+'/download/final_handoff.md').status==200
+            page.locator('#augmentation-section summary').click()
+        else:
+            assert page.locator('#decision-title').inner_text() == 'Историческое сравнение на одной версии меток'
         if name == "mobile":
             assert page.locator("#quality-view .scroll-hint").first.is_visible()
             assert page.locator(".chart-scroll[tabindex='0']").count() == 2
@@ -112,6 +125,7 @@ with sync_playwright() as runner:
         assert downloaded[0]['model_sha256']==summary['model_sha256']
         assert downloaded[0]['train_sha256']==review['train_sha256']
         assert downloaded[0]['target_review_status']=='unresolved_target_semantics'
+        assert downloaded[0]['external_data_used']==str(summary['external_data_used'])
         page.locator('#batch-file').set_input_files({'name':'utf8.csv','mimeType':'text/csv','buffer':b'SMILES\n\xff\n'})
         assert page.locator('#batch-results').is_hidden()
         assert page.locator('#batch-download').get_attribute('href') is None

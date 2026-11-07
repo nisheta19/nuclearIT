@@ -1,0 +1,15 @@
+{
+  "organizer_config": "configs/advanced.json",
+  "organizer_config_sha256": "f84d6c057e5cf3c8237706d98874dee23829ebf33a8adc4d43fefe03551769c5",
+  "reference_run": "artifacts/advanced-v4",
+  "reference_artifact_hashes_sha256": "ce2ed00cc830ad11006c2aafac2698aeb0df29a67f1e088e018364354a004181",
+  "training_dataset_version": "hakathonMiphi-plus-McGuigan3-user-approved-2026-11-08",
+  "approved_external": {
+    "train": "data/external/approved-2026-11-08/train.csv",
+    "train_sha256": "17b7478a8f105d8a21c9cf2acdaf08663a51ed6dae4eea1e93452f78ce0c8ed3",
+    "approval": "data/external/approved-2026-11-08/approval.json",
+    "approval_sha256": "34ee6f7a19a4356bc4ba6e958b73b82c4c766d045df71986f8ad1696c647ebcf",
+    "expected_rows": 3
+  },
+  "promotion_rule": "Candidate must lower organizer-only MSE for structures and scaffolds in both historical and additional splits. No target edits or test-label use."
+}

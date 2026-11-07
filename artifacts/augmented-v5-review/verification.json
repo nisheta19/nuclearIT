@@ -1,0 +1,43 @@
+{
+  "run": "C:\\ostrovok\\nuclearIT\\artifacts\\augmented-v5",
+  "artifacts_checked": 75,
+  "outer_folds": 45,
+  "identical_structures_grouped": true,
+  "inner_folds_exclude_outer_validation": true,
+  "reference_oof_unchanged_within_csv_precision": true,
+  "labels_unchanged": true,
+  "input_hashes_unchanged": true,
+  "mse_mae_recomputed": true,
+  "bootstrap_reproduced": true,
+  "promotion_recomputed": true,
+  "submission_byte_identical_after_reload": true,
+  "medical_queue_rows": 89,
+  "medical_conclusions_pending": true,
+  "submission": {
+    "valid_format": true,
+    "rows": 597,
+    "sha256": "2c23e99e2c8c97a846b918757a9ebfb9f8f444b4f279a66a4e82d9cf49eaf95b",
+    "quality_verified": false,
+    "target_review": {
+      "status": "unresolved_target_semantics",
+      "train_sha256": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+      "dataset_version": "hakathonMiphi-original-user-authorized-2026-11-07",
+      "training_dataset_version": "hakathonMiphi-original-user-authorized-2026-11-07",
+      "external_data_used": false,
+      "external_training_rows": 0,
+      "external_train_sha256": null,
+      "disputed_rows": 81,
+      "organizer_resolution": "pending",
+      "message": "В организаторском train 81 из 320 меток SI = 10000 имеют неопределённый смысл. Эти значения уже есть в исходном архиве; все 81 строки имеют пустой IC50. В полученной версии с теми же SMILES эти 81 метка заменены нулями. Прогнозы и MSE относятся только к сохранённой версии меток; нужен ответ организаторов.",
+      "comparison_note": "MSE разных версий меток нельзя напрямую сравнивать как улучшение модели.",
+      "report_url": "/download/target_version_investigation.md"
+    }
+  },
+  "external_rows": 3,
+  "external_eligibility_checks": 945,
+  "external_group_isolation_verified": true,
+  "evaluation_organizer_rows_only": true,
+  "candidate_submission_byte_identical_after_reload": true,
+  "selected_training_rows": 320,
+  "source_approval_verified": true
+}

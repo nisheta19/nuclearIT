@@ -1,0 +1,82 @@
+train_row_id,Title,SMILES,old_SI,new_SI,CC50_uM,IC50_uM_VACV,strain,Culture
+1,11c,C[C@@]12CC[C@H](C2(C)C)C[C@H]1OC(=O)c3ccc(Br)cc3,0.0,10000.0,26.2,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+2,10a,C1C[C@@H](C2)C(C)(C)[C@@H]([C@]12C)NC(=O)c3ccccc3,0.0,10000.0,217.2,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+4,sid160666886,CC(C(=O)NNC(=O)NC1CCCCC1)c1cccc(Cc2ccccc2)c1,0.0,10000.0,45.0,,"Vaccinia virus, HELA cells",HELA cells
+5,16,C1C[C@@H](C2(C)C)CC(\[C@]12C)=N/NC(=O)[C@@H]([C@H](O3)C=C4)[C@H]([C@@]345)C(=O)N(C5)CCc6ccccc6,0.0,10000.0,250.0,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+7,sid160666885,CC(C(=O)NNC(=O)NCC1CCCCC1)c1cccc(Oc2ccccc2)c1,0.0,10000.0,24.0,,"Vaccinia virus, HELA cells",HELA cells
+11,sid469800484,C=C(C)[C@@H]1CC[C@]2(C(=O)O)CC[C@]3(C)[C@H](CC[C@@H]4[C@@]5(C)Cc6nnn(Cc7ccc(F)cc7)c6C(C)(C)[C@@H]5CC[C@]43C)[C@@H]12,0.0,10000.0,9.3,,"Vaccinia virus, cells HEL",cells HEL
+12,3m (ster?),C1[C@H]2[C@@H]1[C@@H](C=C3)[C@@H]([C@H]4[C@H]23)C(=O)N(C4=O)NC(=O)Nc5c(C)cccc5C,0.0,10000.0,100.0,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+25,sid134460481,Cc1cc(C)cc(Cc2cc(Br)ccc2OCCn2ccc(=O)[nH]c2=O)c1,0.0,10000.0,220.0,,Vaccinia virus,MT-4
+27,10k,C1C[C@@H](C2)C(C)(C)[C@@H]([C@]12C)NC(=O)c3nccnc3,0.0,10000.0,207.8,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+28,5,n1cccnc1SCCC(=O)O[C@@H]2C[C@@H](C3(C)C)CC[C@]23C,0.0,10000.0,35.7,,Vaccinia virus,Vero
+30,10,C1CCCCN1CCCC(=O)O[C@@H]2C[C@@H](C3(C)C)CC[C@]23C,0.0,10000.0,118.48,,Vaccinia virus,Vero
+45,4,C1C[C@H](C2(C)C)C[C@H]([C@@]12C)OC(=O)CCN3C(=S)SCC3,0.0,10000.0,319.4,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak),  ectromelia (strain K-1)",Vero
+47,24b01,O=c1n(O)c(=O)n(CC)c(c12)ccc(c2)-c3cn(nn3)Cc4c(F)cccc4,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+49,sid134452921,O=C(c1ccccc1)c1cc(Cl)ccc1OCCn1ccc(=O)[nH]c1=O,0.0,10000.0,337.0,,Vaccinia virus,MT-4
+53,sid160677530,CC(C)Cc1ccc(C(C)C(=O)NNC(=O)NCCc2ccccc2)cc1,0.0,10000.0,250.0,,"Vaccinia virus, HELA cells",HELA cells
+54,sid134438815,Cc1cc(C)cc(C(=O)c2cc(C)ccc2OCCn2ccc(=O)[nH]c2=O)c1,0.0,10000.0,179.0,,Vaccinia virus,MT-4
+61,11d,C[C@@]12CC[C@H](C2(C)C)C[C@H]1OC(=O)c3ccc(F)cc3,0.0,10000.0,246.2,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+64,sid469808590,C=C(C)[C@@H]1CC[C@]2(C(=O)O)CC[C@]3(C)[C@H](CC[C@@H]4[C@@]5(C)Cc6nnn(CCc7c[nH]c8ccccc78)c6C(C)(C)[C@@H]5CC[C@]43C)[C@@H]12,0.0,10000.0,3.2,,"Vaccinia virus, cells HEL",cells HEL
+76,24a08,O=c1n(O)c(=O)n(C)c(c12)ccc(c2)-c3cn(nn3)Cc4c(F)ccc(F)c4,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+77,24b02,O=c1n(O)c(=O)n(CC)c(c12)ccc(c2)-c3cn(nn3)Cc4ccc(F)cc4,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+81,24a12,O=c1n(O)c(=O)n(C)c(c12)ccc(c2)-c3cn(nn3)Cc4c(Cl)cccc4Cl,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+83,PANI-21,C1C(C)(C)CC(=O)c(c12)[n+]([O-])c(n2C)-c3ccccc3O,0.0,10000.0,349.0,,"Vaccinia virus (strain Copenhagen). culture Vero,",Vero
+86,PANI-19,[O-][n+]1c(C(=O)C)c(C)n(C)c1-c2ccccc2O,0.0,10000.0,406.0,,"Vaccinia virus (strain Copenhagen). culture Vero,",Vero
+88,6,C1[C@H](C2)C[C@H](C3)C[C@@H]1CC23[C@@H](C)/N=C/c4cc(on4)-c5ccc(C)cc5,0.0,10000.0,287.35,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+90,7a,C1C[C@@H](C2(C)C)CC(\[C@]12C)=N/N=c3\scc(-c4ccc(cc4)OC)n3-c5ccccc5,0.0,10000.0,232.0,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+93,sid160672203,CC(C(=O)NN)c1cccc(Oc2ccccc2)c1,0.0,10000.0,120.0,,"Vaccinia virus, HELA cells",HELA cells
+96,40,C1C[C@@H](C2(C)C)C[C@H]([C@]12C)NC(=O)CCN3CCN(CC3)CC,0.0,10000.0,1625.16,,Vaccinia virus,Vero
+102,9a,C1C[C@@H](C2)C(C)(C)[C@H]([C@]12C)NC(=O)c3ccccc3,0.0,10000.0,388.5,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+106,sid160677532,CC(C(=O)NNC(=O)NCC1CCCCC1)c1cccc(Cc2ccccc2)c1,0.0,10000.0,20.0,,"Vaccinia virus, HELA cells",HELA cells
+107,PANI-45,Oc1ccc(Cl)cc1-c2nc(-c3ccccc3)c(n2O)C(=O)Nc4ccccc4,0.0,10000.0,0.39,,"Vaccinia virus (strain Copenhagen). culture Vero,",Vero
+109,15,C1[C@@H](C2)C[C@@H](C3)C[C@H]1CC23[C@@H](C)N(C(=O)c4nsc(Cl)c4Cl)Cc5ccc(cc5)OCc6c(Cl)c(Cl)sn6,0.0,10000.0,21.31,,"Vaccinia virus (strain Copenhagen), Vero cell culture ",Vero
+114,24a03,O=c1n(O)c(=O)n(C)c(c12)ccc(c2)-c3cn(nn3)Cc4cc(F)ccc4,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+115,35,C1[C@H](C2)C[C@H](C3)C[C@@H]1CC23NNC(=O)c4ccc(C(F)(F)F)cc4,0.0,10000.0,2.8,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia (strain K-1)",Vero
+124,sid160677534,NNC(=O)NOCc1ccccc1,0.0,10000.0,250.0,,"Vaccinia virus, HELA cells",HELA cells
+125,20,C1CN(CC)CCN1CCC(=O)O[C@@H]2C[C@@H](C3(C)C)CC[C@]23C,0.0,10000.0,117.86,,Vaccinia virus,Vero
+130,sid160688197,CC(C(=O)NNC(=O)NNC(=O)NOCc1ccccc1)c1cccc(Oc2ccccc2)c1,0.0,10000.0,88.0,,"Vaccinia virus, HELA cells",HELA cells
+131,sid134434981,Cc1cc(C)cc(C(=O)c2cc(Br)ccc2OCCn2ccc(=O)[nH]c2=O)c1,0.0,10000.0,282.0,,Vaccinia virus,MT-4
+132,PANI-53,CCOC(=O)c([nH]1)c(C)nc1-c2ccccc2O ,0.0,10000.0,21.0,,"Vaccinia virus (strain Copenhagen). culture Vero,",Vero
+134,11b,C[C@@]12CC[C@H](C2(C)C)C[C@H]1OC(=O)c3ccc(Cl)cc3,0.0,10000.0,44.7,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+136,11i,C[C@@]12CC[C@H](C2(C)C)C[C@H]1OC(=O)c3cccnc3,0.0,10000.0,32.2,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+138,sid469807193,C=C(C)[C@@H]1CC[C@]2(C(=O)O)CC[C@]3(C)[C@H](CC[C@@H]4[C@@]5(C)Cc6nnn(Cc7ccc(N(C)C)cc7)c6C(C)(C)[C@@H]5CC[C@]43C)[C@@H]12,0.0,10000.0,16.0,,"Vaccinia virus, cells HEL",cells HEL
+149,10m,C1C[C@@H](C2)C(C)(C)[C@@H]([C@]12C)NC(=O)C(CC3)CCC3(F)F,0.0,10000.0,334.0,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+150,11,C1[C@@H](C2)C[C@@H](C3)C[C@H]1CC23[C@@H](C)NCc4cc(on4)-c5ccc(C)cc5,0.0,10000.0,15.14,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+151,sid134458135,Cc1cc(C)cc([C@@H](O)c2cc(Cl)ccc2OCCn2ccc(=O)[nH]c2=O)c1,0.0,10000.0,20.0,,Vaccinia virus,MT-4
+152,1c,CCOC(=O)c1c(C)nc(n1O)-c2ccccc2[N+](=O)[O-],0.0,10000.0,343.3,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak),  ectromelia (strain K-1)",Vero
+156,12,C1CC(C)CCN1CCCC(=O)O[C@@H]2C[C@@H](C3(C)C)CC[C@]23C,0.0,10000.0,81.74,,Vaccinia virus,Vero
+161,2j,C1C[C@@H](C2(C)C)CC(\[C@]12C)=N/NC(=O)c3cccnc3,0.0,10000.0,368.5,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+165,sid134441288,Cc1cc(C)cc(Cc2cc(Cl)ccc2OCCn2ccc(=O)[nH]c2=O)c1,0.0,10000.0,200.0,,Vaccinia virus,MT-4
+169,24a04,O=c1n(O)c(=O)n(C)c(c12)ccc(c2)-c3cn(nn3)Cc4ccccc4,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+171,2h,O=[N+]([O-])c(c1)cccc1-c(n2O)nc(C)c2C(=O)NC3CC3,0.0,10000.0,260.93,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak),  ectromelia (strain K-1)",Vero
+173,13,C[C@]12CC[C@@H](C2(C)C)CC\1=N/N=C3\SCC(=O)N3CC=C,0.0,10000.0,50.7,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak),  ectromelia (strain K-1)",Vero
+176,22,C[C@]12CC[C@@H](C2(C)C)CC\1=N/N=C\3C(=O)Nc(c34)cccc4,0.0,10000.0,34.9,,"Vaccinia virus (strain Copenhagen). culture Vero,",Vero
+185,24b12,O=c1n(O)c(=O)n(CC)c(c12)ccc(c2)-c3cn(nn3)Cc4c(Cl)cccc4Cl,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+188,3'd,C1C[C@H](C2(C)C)CC(\[C@@]12C)=N/N=C3\SCC(=O)N3C,0.0,10000.0,250.0,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+201,sid160672207,CC(C)Cc1ccc(C(C)C(=O)NNC(=O)NOCc2ccccc2)cc1,0.0,10000.0,178.0,,"Vaccinia virus, HELA cells",HELA cells
+210,18,C1C[C@@H](C2(C)C)CC(\[C@]12C)=N/NC(=O)[C@@H]([C@H](O3)C=C4)[C@H]([C@@]345)C(=O)N6[C@@H]5OCCC6,0.0,10000.0,250.0,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+212,9l,C1C[C@@H](C2)C(C)(C)[C@H]([C@]12C)NC(=O)C3CCCCC3,0.0,10000.0,379.6,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+215,24,CCCCN(CCCC)CC(=O)O[C@@H]1C[C@@H](C2(C)C)CC[C@]12C,0.0,10000.0,21.05,,Vaccinia virus,Vero
+216,14,C1[C@@H](C2)C[C@@H](C3)C[C@H]1CC23[C@@H](C)N(C(=O)c4nsc(Cl)c4Cl)Cc5cc(OC)c(cc5)OCc6c(Cl)c(Cl)sn6,0.0,10000.0,8.87,,"Vaccinia virus (strain Copenhagen), Vero cell culture ",Vero
+217,7,C[C@]12CC[C@@H](C2(C)C)C[C@H]1NC(=O)CN3CCOCC3,0.0,10000.0,396.2,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak),  ectromelia (strain K-1)",Vero
+221,21,C[C@]12CC[C@@H](C2(C)C)CC\1=N/N=C\3C(=O)N(C)c(c34)cccc4,0.0,10000.0,16.8,,"Vaccinia virus (strain Copenhagen). culture Vero,",Vero
+224,sid160704384,CC(C(=O)NNC(=O)NCCc1ccccc1)c1cccc(Oc2ccccc2)c1,0.0,10000.0,64.0,,"Vaccinia virus, HELA cells",HELA cells
+225,24a09,O=c1n(O)c(=O)n(C)c(c12)ccc(c2)-c3cn(nn3)Cc4c(F)cc(F)cc4,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+230,45,C1[C@H](C2)C[C@H](C3)C[C@@H]1CC23C(=O)NC/C=C(C)/CCC=C(C)C,0.0,10000.0,12.9,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+234,24a02,O=c1n(O)c(=O)n(C)c(c12)ccc(c2)-c3cn(nn3)Cc4ccc(F)cc4,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+235,4c,C1C[C@@H](C2(C)C)CC(\[C@]12C)=N/N=C(\SC3(C)C)N(C3=O)CC,0.0,10000.0,290.0,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+240,sid469823030,C=C(C)[C@@H]1CC[C@]2(C(=O)O)CC[C@]3(C)[C@H](CC[C@@H]4[C@@]5(C)Cc6nnn([C@H](C)c7ccccc7)c6C(C)(C)[C@@H]5CC[C@]43C)[C@@H]12,0.0,10000.0,49.0,,"Vaccinia virus, cells HEL",cells HEL
+245,11h,C[C@@]12CC[C@H](C2(C)C)C[C@H]1OC(=O)c3ccncc3,0.0,10000.0,36.4,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+254,11g,C[C@@]12CC[C@H](C2(C)C)C[C@H]1OC(=O)c3ccc(C)cc3,0.0,10000.0,20.9,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+262,8,C1[C@H](C2)C[C@H](C3)C[C@@H]1CC23[C@@H](C)/N=C/c4ccc(c(c4)OC)OCc5c(Cl)c(Cl)sn5,0.0,10000.0,52.31,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+263,sid160699040,CC(C(=O)NNC(=O)NOCc1ccccc1)c1cccc(Cc2ccccc2)c1,0.0,10000.0,78.0,,"Vaccinia virus, HELA cells",HELA cells
+265,24a05,O=c1n(O)c(=O)n(C)c(c12)ccc(c2)-c3cn(nn3)Cc4ccc(C#N)cc4,0.0,10000.0,100.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+267,sid160677531,CC(C(=O)NNC(=O)NC(c1ccccc1)c1ccccc1)c1cccc(Oc2ccccc2)c1,0.0,10000.0,5.7,,"Vaccinia virus, HELA cells",HELA cells
+269,PANI-46,Oc1ccc(Br)cc1-c2nc(-c3ccccc3)c(n2O)C(=O)Nc4ccccc4,0.0,10000.0,0.36,,"Vaccinia virus (strain Copenhagen). culture Vero,",Vero
+275,11a,C[C@@]12CC[C@H](C2(C)C)C[C@H]1OC(=O)c3ccccc3,0.0,10000.0,22.4,,"Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",Vero
+283,sid134445116,O=C(c1ccccc1)c1cc(Br)ccc1OCCn1ccc(=O)[nH]c1=O,0.0,10000.0,301.0,,Vaccinia virus,MT-4
+284,21,C1CN(CC)CCN1CCCC(=O)O[C@@H]2C[C@@H](C3(C)C)CC[C@]23C,0.0,10000.0,104.96,,Vaccinia virus,Vero
+293,24b09,O=c1n(O)c(=O)n(CC)c(c12)ccc(c2)-c3cn(nn3)Cc4c(F)cc(F)cc4,0.0,10000.0,20.0,,"Vaccinia virus, lung fibroblast cells", lung fibroblast cells
+297,6a,C1C[C@@H](C2(C)C)CC(\[C@]12C)=N/N=c3\scc(-c4ccc(C)cc4)n3-c5ccccc5,0.0,10000.0,98.0,,Vaccinia virus (strain Copenhagen). culture Vero,Vero
+302,sid469800832,C=C(C)[C@@H]1CC[C@]2(C(=O)O)CC[C@]3(C)[C@H](CC[C@@H]4[C@@]5(C)Cc6nnn(Cc7ccc8c(c7)OCO8)c6C(C)(C)[C@@H]5CC[C@]43C)[C@@H]12,0.0,10000.0,15.0,,"Vaccinia virus, cells HEL",cells HEL
+317,sid134450510,Cc1cc(C)cc(C(=O)c2cc(Cl)ccc2OCCn2c(C)cc(=O)[nH]c2=O)c1,0.0,10000.0,303.0,,Vaccinia virus,MT-4

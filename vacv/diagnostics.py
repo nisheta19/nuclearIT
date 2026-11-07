@@ -108,7 +108,8 @@ def build_diagnostics(output, write_report=True):
     diagnostics = {"primary_seed": primary_seed, "strategy": strategy, "invalid_test": int((~test_st.valid).sum()),
         "test_similarity_median": float(np.nanmedian(test_similarity)), "test_below_0_3": int((test_similarity < .3).sum()), "test_below_0_5": int((test_similarity < .5).sum()),
         "duplicate_groups": len(groups), "conflicting_groups": int((groups.status == "conflicting_labels").sum()), "rounding_groups": int((groups.status == "rounding_scale_difference").sum()),
-        "largest_target_review": review, "label_changes": 0, "external_data_used": False,
+        "largest_target_review": review, "label_changes": 0, "external_data_used": bool(selection.get('external_data_used', False)),
+        "coverage_population": "organizer training rows only",
         "similarity_note": "Tanimoto on chiral Morgan radius=2/2048 binary bits. Descriptive coverage, not calibrated confidence. Bins are exploratory; do not select model or discard rows with them."}
     save_json(output / "diagnostics.json", diagnostics)
     make_plots(output, primary)

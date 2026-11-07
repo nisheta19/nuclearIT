@@ -21,6 +21,7 @@ from .diagnostics import tanimoto
 from .models import predict_model
 from .pipeline import environment
 from .target_status import target_status
+from .augmentation import load_approved_external
 
 
 class Workbench:
@@ -33,7 +34,10 @@ class Workbench:
         expected = self.bundle["manifest"]["inputs"]["train"]["sha256"]
         if sha256(self.bundle["config"]["train"]) != expected:
             raise ValueError("Training source has changed since this model was saved")
-        self.train = pd.read_csv(self.run_dir / "train_for_model.csv", dtype={"train_row_id": str})
+        if self.bundle['manifest'].get('external_data_used'):
+            load_approved_external(self.bundle['manifest']['approved_external'])
+        population = self.run_dir / 'training_population.csv'
+        self.train = pd.read_csv(population if population.is_file() else self.run_dir / "train_for_model.csv", dtype={"train_row_id": str})
         self.similarity_spec = {"radius": 2, "bits": 2048, "include_chirality": True}
         self.train_st, self.train_x = featurize(self.train.SMILES, self.similarity_spec)
         self.model_sha256 = sha256(self.run_dir / 'model.joblib')
@@ -54,6 +58,7 @@ class Workbench:
             for scheme in ('structure','scaffold'):
                 row[scheme+'_mae'] = float(scores[(scores.model==row['model']) & (scores.scheme==scheme)].mae.mean())
         reliability = read('reliability.json') if (self.run_dir/'reliability.json').is_file() else None
+        augmentation = read('augmentation_summary.json') if (self.run_dir/'augmentation_summary.json').is_file() else None
         medical = json.loads((self.medical_dir/'summary.json').read_text(encoding='utf-8')) if (self.medical_dir/'summary.json').is_file() else None
         if medical and medical['train_sha256'] != self.bundle['manifest']['inputs']['train']['sha256']:
             medical = None
@@ -66,9 +71,10 @@ class Workbench:
             "reference_strategy":selection.get('reference_strategy','baseline_ridge'), "reference_label":selection.get('reference_label','Исходный Ridge'),
             "reliability":reliability, "medical_review":medical, "range_comparison":ranges, "model_sha256":self.model_sha256,
             "target_review": self.target_review,
+            "augmentation": augmentation, "training_rows": len(self.train),
             "audit": audit, "leaderboard": table, "diagnostics": diagnostics,
             "examples": [{"label": f"Молекула test · {test.iloc[i]['index']}", "smiles": test.iloc[i].SMILES} for i in (0, min(10, len(test)-1))],
-            "input_features": "Только SMILES", "external_data_used": False,
+            "input_features": "Только SMILES", "external_data_used": bool(self.bundle['manifest'].get('external_data_used',False)),
             "validation_note": "Вложенная групповая валидация. Все разбиения используют один train; дополнительные разбиения проверяют устойчивость. Финального независимого теста нет."}
 
     def predict(self, smiles):
@@ -148,6 +154,10 @@ def make_server(run_dir, port=8765):
             if app.summary.get('target_review', {}).get('report_url'):
                 routes['/download/target_version_investigation.md']=(app.web_root.parent/'docs'/'target_version_investigation.md','text/markdown; charset=utf-8')
                 routes['/download/labels_for_clarification.csv']=(app.web_root.parent/'data'/'review'/'target_versions'/'labels_for_clarification.csv','text/csv; charset=utf-8')
+            if app.summary.get('augmentation'):
+                routes['/download/approved_external.csv']=(app.run_dir/'external_for_model.csv','text/csv; charset=utf-8')
+                routes['/download/external_approval.json']=(app.run_dir/'external_approval.json','application/json; charset=utf-8')
+                routes['/download/final_handoff.md']=(app.web_root.parent/'docs'/'final_handoff_2026-11-08.md','text/markdown; charset=utf-8')
             if path not in routes or not routes[path][0].is_file():
                 self.json({"error": "Not found"}, 404)
                 return
@@ -183,7 +193,7 @@ def make_server(run_dir, port=8765):
 
 def main():
     parser = argparse.ArgumentParser(description="Local VACV SI workbench")
-    parser.add_argument("--run", default="artifacts/advanced-v4")
+    parser.add_argument("--run", default="artifacts/augmented-v5")
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
     server = make_server(args.run, args.port)

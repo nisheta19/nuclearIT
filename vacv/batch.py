@@ -91,7 +91,9 @@ def batch_predict(bundle,train_st,train_x,text,run_name,model_sha256):
             'max_similarity':float(similarities[i]) if ok else None,'coverage_band':coverage,
             'training_matches':int(counts.get(structure.structure_id,0)) if ok else 0,
             'model_name':bundle['name'],'run_name':run_name,'model_sha256':model_sha256,'dataset_version':bundle['config']['dataset_version'],
-            'train_sha256':review['train_sha256'], 'target_review_status':review['status'], 'target_review_note':review['message']})
+            'train_sha256':review['train_sha256'], 'target_review_status':review['status'], 'target_review_note':review['message'],
+            'training_dataset_version':review['training_dataset_version'], 'external_data_used':review['external_data_used'],
+            'external_train_sha256':review['external_train_sha256']})
     return {'rows':output,'total':len(rows),'valid':int(valid.sum()),'invalid':int((~valid).sum()),
             'below_0_3':int((similarities<.3).sum()),'below_0_5':int((similarities<.5).sum()),
             'ignored_columns':ignored,'csv':result_csv(output),'target_review':review,

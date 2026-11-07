@@ -1,0 +1,11 @@
+{
+  "review_date": "2026-11-08",
+  "reviewer": "user",
+  "source": "data/literature/mcguigan2013.pdf",
+  "confirmed_compounds": ["8i", "8j", "8k", "8l", "8m"],
+  "confirmed_table_values_and_relations": true,
+  "confirmed_bsc1_column_and_footnote": true,
+  "confirmed_side_chain_mapping": true,
+  "confirmed_scheme_dashed_bonds": true,
+  "evidence": "User manually reviewed source pages and supplied screenshots of Scheme 1 and complete Table 2."
+}

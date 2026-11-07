@@ -1,0 +1,25 @@
+{
+  "input_sha256": {
+    "C:/Users/Asus/Downloads/train_v2.csv": "d9a876a67b5623d9cdb6592fc53d31ffaa7c535b09968c3a538138740fe246e8",
+    "C:/Users/Asus/Documents/ChatGPT/nuclearIT/data/raw/competition/train.csv": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81"
+  },
+  "rows": 320,
+  "changed_targets": 81,
+  "changed_fields": {
+    "SI VACV": 81
+  },
+  "transitions": {
+    "0.0 -> 10000.0": 81
+  },
+  "changed_rows_missing_IC50": 81,
+  "changed_rows_missing_CC50": 0,
+  "all_old_rows_missing_IC50": 81,
+  "changed_cell_lines": {
+    "Vero": 46,
+    "HELA cells": 11,
+    "cells HEL": 5,
+    "MT-4": 8,
+    " lung fibroblast cells": 11
+  },
+  "zero_prediction_mse_difference_from_changed_labels": 25312500.0
+}

@@ -1,0 +1,71 @@
+{
+  "authorization_status": "user_confirmed",
+  "authorization_date": "2026-11-08",
+  "authorization_quote": "Да, используй 3 строки из итогового журнала",
+  "training_csv_sha256": "17b7478a8f105d8a21c9cf2acdaf08663a51ed6dae4eea1e93452f78ce0c8ed3",
+  "source_archive_sha256": "c5db93fa51fcf681e30b7de52af678d1d45d18907d956a1e11b27e489cc3c58b",
+  "source_files": {
+    "data\\review\\final_handoff_2026-11-08\\source\\data\\handoff\\pairs_pending_review.csv": "05edd19844e3162f1a6255e0a369412ffc5843dd126d307d4296b3b083f12949",
+    "data\\review\\final_handoff_2026-11-08\\source\\docs\\20-human-review-log.md": "6fdbdba76b83625a6ed8a04d353583a89545fea9f3eca8301559cd731f4c3995",
+    "data\\review\\final_handoff_2026-11-08\\source\\data\\review\\third_paper\\human_review.json": "c2bfa44f6428dbf880d09dd570e8b02cd28a93f227b4948991b1221e154f30e9"
+  },
+  "records": [
+    {
+      "record_id": "jm301778x_8i",
+      "compound": "8i",
+      "SMILES": "CCOCCCCCCCCCc1cc2cn([C@@H]3CC[C@H](CO)O3)c(=O)nc2o1",
+      "si": 6.155038759689923,
+      "si_decimal": "6.155038759689922480620155039",
+      "activity_relation": "=",
+      "cc50_relation": "=",
+      "pairing_reviewed": true,
+      "approved_for_training": true,
+      "review_status": "accepted_exact",
+      "doi": "10.1021/jm301778x",
+      "source_table": "2; PDF pages 9-10",
+      "cell_line": "BSC-1",
+      "activity_value_text": "12.9",
+      "cc50_value_text": "79.4"
+    },
+    {
+      "record_id": "jm301778x_8j",
+      "compound": "8j",
+      "SMILES": "CCCOCCCCCCCCCc1cc2cn([C@@H]3CC[C@H](CO)O3)c(=O)nc2o1",
+      "si": 46.89473684210526,
+      "si_decimal": "46.89473684210526315789473684",
+      "activity_relation": "=",
+      "cc50_relation": "=",
+      "pairing_reviewed": true,
+      "approved_for_training": true,
+      "review_status": "accepted_exact",
+      "doi": "10.1021/jm301778x",
+      "source_table": "2; PDF pages 9-10",
+      "cell_line": "BSC-1",
+      "activity_value_text": "1.9",
+      "cc50_value_text": "89.1"
+    },
+    {
+      "record_id": "jm301778x_8m",
+      "compound": "8m",
+      "SMILES": "CCCCCCOCCCCCCCCCc1cc2cn([C@@H]3CC[C@H](CO)O3)c(=O)nc2o1",
+      "si": 390.0,
+      "si_decimal": "3.9E+2",
+      "activity_relation": "=",
+      "cc50_relation": "=",
+      "pairing_reviewed": true,
+      "approved_for_training": true,
+      "review_status": "accepted_exact",
+      "doi": "10.1021/jm301778x",
+      "source_table": "2; PDF pages 9-10",
+      "cell_line": "BSC-1",
+      "activity_value_text": "0.19",
+      "cc50_value_text": "74.1"
+    }
+  ],
+  "excluded_bound_compounds": [
+    "8k",
+    "8l"
+  ],
+  "reconstructed_from_final_review_log": true,
+  "new_medical_review_performed_here": false
+}

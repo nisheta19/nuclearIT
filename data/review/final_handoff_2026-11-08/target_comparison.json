@@ -1,0 +1,9 @@
+{
+  "selected_train_sha256": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+  "received_clean_train_sha256": "0c66b0678676dd083b9f9ce028ceba789c1ac88f7490c0de3fcdcc5e0098faae",
+  "same_smiles_and_order": true,
+  "changed_targets": 81,
+  "transition": "10000 -> 0",
+  "other_experimental_fields_available_in_received_clean_train": false,
+  "organizer_semantics_resolved": false
+}

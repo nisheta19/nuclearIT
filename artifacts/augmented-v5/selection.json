@@ -1,0 +1,52 @@
+{
+  "strategy": "incumbent_v4",
+  "promoted": false,
+  "final_model": "two_stage:r3_binary:a1:C0.1",
+  "comparison_candidate": "augmented_search",
+  "reference_strategy": "incumbent_v4",
+  "reference_label": "v4: только организаторы",
+  "candidate_label": "v5: +3 проверенные строки",
+  "promotion_checks": [
+    {
+      "phase": "historical",
+      "scheme": "structure",
+      "baseline_mse": 14816985.026827827,
+      "candidate_mse": 14809202.820602445,
+      "improvement_percent": 0.05252219808072889,
+      "passed": true
+    },
+    {
+      "phase": "historical",
+      "scheme": "scaffold",
+      "baseline_mse": 18713792.960573714,
+      "candidate_mse": 18773574.241769083,
+      "improvement_percent": -0.3194503718263686,
+      "passed": false
+    },
+    {
+      "phase": "additional",
+      "scheme": "structure",
+      "baseline_mse": 14421766.978341678,
+      "candidate_mse": 14416316.309768071,
+      "improvement_percent": 0.03779473473529693,
+      "passed": true
+    },
+    {
+      "phase": "additional",
+      "scheme": "scaffold",
+      "baseline_mse": 17010830.457494132,
+      "candidate_mse": 17015974.216040783,
+      "improvement_percent": -0.030238138928617708,
+      "passed": false
+    }
+  ],
+  "rule": "Candidate must lower organizer-only MSE for structures and scaffolds in both historical and additional splits. No target edits or test-label use.",
+  "external_data_used": false,
+  "external_rows_used": 0,
+  "model_labels": {
+    "incumbent_v4": "v4: только организаторы",
+    "augmented_search": "v5: +3 проверенные строки",
+    "baseline_ridge": "Исходный Ridge",
+    "mean": "Среднее train"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-08",
+  "training_dataset_version": "hakathonMiphi-plus-McGuigan3-user-approved-2026-11-08",
+  "organizer_train_sha256": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+  "approved_external_train_sha256": "17b7478a8f105d8a21c9cf2acdaf08663a51ed6dae4eea1e93452f78ce0c8ed3",
+  "candidate_train_rows": 323,
+  "evaluation_rows": 320,
+  "external_training_only_rows": 3,
+  "test_rows": 597,
+  "features_from": [
+    "SMILES"
+  ],
+  "organizer_labels_changed": 0,
+  "alternate_organizer_train_used": false,
+  "bound_rows_used": false,
+  "files": {
+    "candidate_train_323.csv": "a68a6d98c854605adcbafa822dc3c0fae523dec00b29ceeeaa29436fd70cdafe",
+    "row_provenance.csv": "0852706ab34a4e50dd57e52b3aafd00ba66041110425ce57b60d54916b9a1912",
+    "sample_submit.csv": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c",
+    "test_for_model.csv": "60fc0cf538b2065d92c9e23a12fb0df4766f021eba7c37f9088a66bb7006ad8d"
+  }
+}

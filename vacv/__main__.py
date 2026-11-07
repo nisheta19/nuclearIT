@@ -9,9 +9,9 @@ from .pipeline import predict, run
 def main():
     parser = argparse.ArgumentParser(description="VACV SI: organizer-only, SMILES-only regression")
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ("audit", "train", "tune", "improve", "advance"):
+    for name in ("audit", "train", "tune", "improve", "advance", "augment"):
         command = commands.add_parser(name)
-        default_config = {"tune": "configs/nested.json", "improve": "configs/kernel.json", "advance":"configs/advanced.json"}.get(name, "configs/baseline.json")
+        default_config = {"tune": "configs/nested.json", "improve": "configs/kernel.json", "advance":"configs/advanced.json", "augment":"configs/augmented.json"}.get(name, "configs/baseline.json")
         command.add_argument("--config", default=default_config)
         command.add_argument("--output", required=True, help="New directory; existing runs are not overwritten")
     command = commands.add_parser("predict")
@@ -25,10 +25,14 @@ def main():
     else:
         config = json.loads(Path(args.config).read_text(encoding="utf-8"))
         from .target_status import target_status
-        review = target_status({'dataset_version':config['dataset_version'],
-                                'inputs':{'train':{'sha256':config.get('input_sha256',{}).get('train')}}})
+        organizer = json.loads(Path(config['organizer_config']).read_text(encoding='utf-8')) if args.command == 'augment' else config
+        review = target_status({'dataset_version':organizer['dataset_version'],
+                                'inputs':{'train':{'sha256':organizer.get('input_sha256',{}).get('train')}}})
         print('Статус меток: '+review['message'], file=sys.stderr)
-        if args.command == "advance":
+        if args.command == "augment":
+            from .augmented_experiment import augmented_run
+            result = augmented_run(config,args.output)
+        elif args.command == "advance":
             from .advanced_experiment import advanced_run
             result = advanced_run(config,args.output)
         elif args.command == "improve":

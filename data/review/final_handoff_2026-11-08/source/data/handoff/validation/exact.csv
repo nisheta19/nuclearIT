@@ -1,0 +1,1 @@
+record_id,compound_source_id,molecule_chembl_id,smiles,doi,source_url,source_file,source_version,source_table,virus_normalized,cell_line,endpoint,activity_value,activity_unit,activity_relation,cc50_value,cc50_unit,cc50_relation,pairing_evidence,pairing_reviewed,approved_for_training,review_status,overlap_checked,si_calculated,si_calculated_relation,review_reasons

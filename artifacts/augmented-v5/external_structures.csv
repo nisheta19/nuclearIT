@@ -1,0 +1,4 @@
+train_row_id,SMILES,valid,canonical_smiles,structure_id,scaffold_smiles,scaffold_id,error
+external:jm301778x_8i,CCOCCCCCCCCCc1cc2cn([C@@H]3CC[C@H](CO)O3)c(=O)nc2o1,True,CCOCCCCCCCCCc1cc2cn([C@@H]3CC[C@H](CO)O3)c(=O)nc2o1,472fd9cc10e903db9eefedd88ae2b14696297372acf878dc8f6eed07af297c52,O=c1nc2occc2cn1C1CCCO1,9be7a72d3c32fa0b8e7a26d0e791b9e297a35cb9a847ef570317164d93c7fdf2,
+external:jm301778x_8j,CCCOCCCCCCCCCc1cc2cn([C@@H]3CC[C@H](CO)O3)c(=O)nc2o1,True,CCCOCCCCCCCCCc1cc2cn([C@@H]3CC[C@H](CO)O3)c(=O)nc2o1,0899e4630bffaf62434eebbdb9241948ebfd0bf3e1caba8f33c1617be1e43431,O=c1nc2occc2cn1C1CCCO1,9be7a72d3c32fa0b8e7a26d0e791b9e297a35cb9a847ef570317164d93c7fdf2,
+external:jm301778x_8m,CCCCCCOCCCCCCCCCc1cc2cn([C@@H]3CC[C@H](CO)O3)c(=O)nc2o1,True,CCCCCCOCCCCCCCCCc1cc2cn([C@@H]3CC[C@H](CO)O3)c(=O)nc2o1,638ced12bd1dc62222256526c4a08e1533544e67243b35e37f55b45abf253cb5,O=c1nc2occc2cn1C1CCCO1,9be7a72d3c32fa0b8e7a26d0e791b9e297a35cb9a847ef570317164d93c7fdf2,

@@ -1,0 +1,89 @@
+{
+  "source_archive": "хакатон.zip",
+  "source_archive_sha256": "c5db93fa51fcf681e30b7de52af678d1d45d18907d956a1e11b27e489cc3c58b",
+  "received_date": "2026-11-08",
+  "selected_members": {
+    "source/START_HERE.md": {
+      "archive_member": "хакатон/START_HERE.md",
+      "sha256": "3c891799eca9f575082584b2d52c6fe9904b2ecb99b5aa8f3fb698917f2ff353",
+      "bytes": 6075
+    },
+    "source/docs/20-human-review-log.md": {
+      "archive_member": "хакатон/docs/20-human-review-log.md",
+      "sha256": "6fdbdba76b83625a6ed8a04d353583a89545fea9f3eca8301559cd731f4c3995",
+      "bytes": 2289
+    },
+    "source/docs/02-competition-contract.md": {
+      "archive_member": "хакатон/docs/02-competition-contract.md",
+      "sha256": "53fc4abcf7ff10f5064049b4b03e1dfc97a742a69c53af6309d292e28e6f1c3a",
+      "bytes": 2581
+    },
+    "source/docs/19-third-paper-stereochemistry.md": {
+      "archive_member": "хакатон/docs/19-third-paper-stereochemistry.md",
+      "sha256": "6246a6e336158579c0e380a205a71a7117d2fa4829ffdedb7a28c9e3b7b5e2f1",
+      "bytes": 4025
+    },
+    "source/data/review/third_paper/human_review.json": {
+      "archive_member": "хакатон/data/review/third_paper/human_review.json",
+      "sha256": "c2bfa44f6428dbf880d09dd570e8b02cd28a93f227b4948991b1221e154f30e9",
+      "bytes": 448
+    },
+    "source/data/review/third_paper/primary_table_review.csv": {
+      "archive_member": "хакатон/data/review/third_paper/primary_table_review.csv",
+      "sha256": "bb59ce3b099021b86f4c67a126282d6cd4e3a3a85629bffa55f21f586de937a6",
+      "bytes": 1729
+    },
+    "source/data/review/third_paper/structure_review.csv": {
+      "archive_member": "хакатон/data/review/third_paper/structure_review.csv",
+      "sha256": "8332e4df383d46fc7929157d4bb81a0c2e092b1ed2c80bb13f93992acfe1b758",
+      "bytes": 2359
+    },
+    "source/data/handoff/pairs_pending_review.csv": {
+      "archive_member": "хакатон/data/handoff/pairs_pending_review.csv",
+      "sha256": "05edd19844e3162f1a6255e0a369412ffc5843dd126d307d4296b3b083f12949",
+      "bytes": 2246
+    },
+    "source/data/handoff/validation/reviewed.csv": {
+      "archive_member": "хакатон/data/handoff/validation/reviewed.csv",
+      "sha256": "cad7f82ef96904ef761e82adc067544046d3a1feecb3b1122a9dc776cc21ea14",
+      "bytes": 2373
+    },
+    "source/data/handoff/validation/report.json": {
+      "archive_member": "хакатон/data/handoff/validation/report.json",
+      "sha256": "01afb833cdfa0ccddd8c7dde159cb9d827249c16781b3eb685cd31e43362dbb0",
+      "bytes": 310
+    },
+    "source/data/handoff/validation/exact.csv": {
+      "archive_member": "хакатон/data/handoff/validation/exact.csv",
+      "sha256": "ed95398815e5c8567330100961a0fcba6f66a9f675e27679173e9ee948ff9627",
+      "bytes": 367
+    },
+    "source/data/organizer_audit/train_for_model_unreviewed.csv": {
+      "archive_member": "хакатон/data/organizer_audit/train_for_model_unreviewed.csv",
+      "sha256": "0c66b0678676dd083b9f9ce028ceba789c1ac88f7490c0de3fcdcc5e0098faae",
+      "bytes": 21311
+    },
+    "source/data/organizer_audit/test_for_model.csv": {
+      "archive_member": "хакатон/data/organizer_audit/test_for_model.csv",
+      "sha256": "60fc0cf538b2065d92c9e23a12fb0df4766f021eba7c37f9088a66bb7006ad8d",
+      "bytes": 36377
+    },
+    "source/data/review/target_versions/changed_labels.csv": {
+      "archive_member": "хакатон/data/review/target_versions/changed_labels.csv",
+      "sha256": "09b7d4192ab0c1de38742327c1b5fa03c2953ad5708a52aa32d4e9cc04e0694a",
+      "bytes": 12214
+    },
+    "source/data/review/target_versions/report.json": {
+      "archive_member": "хакатон/data/review/target_versions/report.json",
+      "sha256": "3fd0e69e1192834a0a778945f2382c96af713c35a821608cf63762210337c5ee",
+      "bytes": 753
+    },
+    "source/data/literature/mcguigan2013.pdf": {
+      "archive_member": "хакатон/data/literature/mcguigan2013.pdf",
+      "sha256": "af3a1eda5aca5ccb098af51d3fe045e8b1c6b9f2c8ab2c64a89548850c1555a8",
+      "bytes": 690165
+    }
+  },
+  "execution_of_archive_code": false,
+  "approval_resolution": "user_confirmed_reconstruction_of_8i_8j_8m"
+}

@@ -1,0 +1,7 @@
+{
+  "candidate_training_rows": 323,
+  "test_rows": 597,
+  "candidate_batch_matches_submission": true,
+  "external_used_metadata_correct": true,
+  "retained_source_members_hash_verified": 16
+}

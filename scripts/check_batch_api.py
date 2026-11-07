@@ -20,9 +20,10 @@ def post(path,value):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--report',type=Path,default=Path('artifacts/advanced-v4-review/batch_api_verification.json'))
+    parser.add_argument('--run',type=Path,default=Path('artifacts/augmented-v5'))
     args=parser.parse_args()
     started=time.monotonic()
-    run=Path('artifacts/advanced-v4')
+    run=args.run
     original=Path('data/raw/competition/test.csv').read_text(encoding='utf-8-sig')
     result=post('/api/batch',{'csv':original})
     expected=pd.read_csv(run/'submission.csv',dtype={'index':str})
@@ -34,6 +35,9 @@ if __name__=='__main__':
     assert result['target_review']['status']=='unresolved_target_semantics'
     assert {row['target_review_status'] for row in exported}=={'unresolved_target_semantics'}
     assert {row['train_sha256'] for row in exported}=={result['target_review']['train_sha256']}
+    expected_external=bool(json.loads((run/'selection.json').read_text(encoding='utf-8')).get('external_data_used',False))
+    assert result['target_review']['external_data_used']==expected_external
+    assert {row['external_data_used'] for row in exported}=={str(expected_external)}
     np.testing.assert_allclose([float(row['predicted_si']) for row in exported],expected['SI VACV'],rtol=1e-12,atol=1e-9)
     single=post('/api/predict',{'smiles':result['rows'][0]['SMILES']})
     np.testing.assert_allclose(single['predicted_si'],result['rows'][0]['predicted_si'],rtol=1e-12,atol=1e-9)

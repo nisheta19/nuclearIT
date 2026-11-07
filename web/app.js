@@ -32,8 +32,11 @@ async function initialize() {
       $('target-review-links').hidden = !review.report_url;
       $('target-review-question').hidden = !review.report_url;
     }
-    $('run-label').textContent = `${summary.run_name} · ${summary.audit.train_rows} строк train`;
-    $('dataset-description').textContent = `${summary.audit.train_rows} наблюдений из исходного набора организаторов. Нулевых меток: ${summary.audit.zero_targets}; меток 10000: ${summary.audit.targets_10000}. Все сохранены без исправлений. Внешние данные не используются.`;
+    const extraRows = summary.target_review?.external_training_rows || 0;
+    $('run-label').textContent = `${summary.run_name} · ${summary.training_rows || summary.audit.train_rows} строк в обучении`;
+    const externalNote = extraRows ? `Добавлены ${extraRows} проверенные внешние записи.` : 'Текущая модель обучена только на данных организаторов.';
+    $('dataset-description').textContent = `${summary.audit.train_rows} наблюдений организаторов. Нулевых меток: ${summary.audit.zero_targets}; меток 10000: ${summary.audit.targets_10000}. Все сохранены без исправлений. ${externalNote}`;
+    $('footer-dataset').textContent = extraRows ? `${summary.audit.train_rows} строк организаторов + ${extraRows} проверенные внешние.` : 'Текущая модель: набор организаторов.';
     const referenceLabel = summary.reference_label || 'Исходный Ridge';
     $('decision-title').textContent = review ? 'Историческое сравнение на одной версии меток' : summary.promoted ? 'Новая модель прошла критерии выпуска' : `Для прогнозов сохранена предыдущая модель`;
     const baseline = summary.leaderboard.find(r => r.model === summary.reference_strategy);
@@ -42,6 +45,22 @@ async function initialize() {
     const checks = summary.promotion_checks || [];
     let decision = summary.promoted ? 'Процедура подбора прошла критерии выпуска. Прогнозы рассчитаны новой моделью.' : `Подбор не прошёл все критерии выпуска. Для прогнозов используется: ${referenceLabel}.`;
     if (review) decision = `Прогнозы рассчитаны сохранённой моделью ${summary.run_name}. Статистические критерии исходного запуска не подтверждают смысл меток и биологическую точность.`;
+    if (summary.augmentation) {
+      $('decision-title').textContent = summary.promoted ? 'Добавления прошли четыре условия по MSE' : 'Для прогнозов сохранена модель v4';
+      decision = summary.promoted ? 'Модель с тремя проверенными дополнениями снижает MSE по структурам и каркасам в обоих наборах разбиений.' : 'Три дополнения проверены, но улучшение не прошло все четыре условия. Для прогнозов используется прежняя модель; эксперимент сохранён отдельно.';
+      decision += ' Смысл специальных меток организаторов остаётся неустановленным.';
+      $('augmentation-section').hidden = false;
+      const aug = summary.augmentation;
+      $('augmentation-date').textContent = `Подтверждение: ${aug.authorization_date}`;
+      $('augmentation-description').textContent = `${aug.candidate_rows} точные записи подготовлены для обучения. В текущей модели используются: ${aug.selected_model_rows}. MSE сравнивается на тех же ${aug.organizer_rows} организаторских строках; метки не менялись.`;
+      for (const record of aug.records) {
+        const tr = row([record.compound, number(record.si,3), '']);
+        const link = document.createElement('a');
+        link.href = 'https://doi.org/' + encodeURIComponent(record.doi);
+        link.textContent = 'McGuigan, 2013'; link.target = '_blank'; link.rel = 'noopener';
+        tr.lastElementChild.append(link); $('augmentation-rows').append(tr);
+      }
+    }
     if (checks.length) {
       decision += ` Сравнение с «${referenceLabel}»: ` + checks.map(c => `${c.phase === 'historical' ? 'прежние' : 'дополнительные'} разбиения, ${c.scheme === 'structure' ? 'структуры' : 'каркасы'}: ${c.improvement_percent >= 0 ? 'снижение' : 'рост'} MSE ${number(Math.abs(c.improvement_percent),2)}%`).join('; ') + '.';
     } else if (tuned && baseline) {
@@ -63,6 +82,12 @@ async function initialize() {
       $('reliability-note').textContent = summary.reliability.note;
     }
     if (summary.range_comparison?.length) {
+      const beforeVersion = summary.augmentation ? 'v4' : 'v3';
+      const afterVersion = summary.augmentation ? 'v5' : 'v4';
+      for (const metric of ['mse','mae']) {
+        $('range-'+metric+'-before').textContent = metric.toUpperCase()+' '+beforeVersion;
+        $('range-'+metric+'-after').textContent = metric.toUpperCase()+' '+afterVersion;
+      }
       $('ranges-section').hidden = false;
       for (const r of summary.range_comparison.filter(r => r.phase === 'historical')) $('range-rows').append(row([`${r.scheme === 'structure' ? 'Структуры' : 'Каркасы'} / ${r.target_bin}`,r.n,number(r.mse_before),number(r.mse_after),number(r.mae_before),number(r.mae_after)]));
     }

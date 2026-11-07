@@ -1,0 +1,36 @@
+{
+  "candidate_rows": 3,
+  "selected_model_rows": 0,
+  "organizer_rows": 320,
+  "training_rows": 320,
+  "external_scaffolds": 1,
+  "train_structure_overlaps": 0,
+  "train_scaffold_overlaps": 0,
+  "test_structure_overlaps": 0,
+  "bound_rows_excluded": 2,
+  "records": [
+    {
+      "record_id": "jm301778x_8i",
+      "compound": "8i",
+      "si": 6.155038759689923,
+      "doi": "10.1021/jm301778x"
+    },
+    {
+      "record_id": "jm301778x_8j",
+      "compound": "8j",
+      "si": 46.89473684210526,
+      "doi": "10.1021/jm301778x"
+    },
+    {
+      "record_id": "jm301778x_8m",
+      "compound": "8m",
+      "si": 390.0,
+      "doi": "10.1021/jm301778x"
+    }
+  ],
+  "reference_label": "v4: только организаторы",
+  "candidate_label": "v5: +3 проверенные строки",
+  "reconstructed_from_final_review_log": true,
+  "authorization_date": "2026-11-08",
+  "promoted": false
+}

@@ -1,0 +1,12 @@
+{
+  "input_sha256": "05edd19844e3162f1a6255e0a369412ffc5843dd126d307d4296b3b083f12949",
+  "rows": 5,
+  "statuses": {
+    "needs_review": 5
+  },
+  "limitations": [
+    "SMILES chemistry is not validated",
+    "Pairing requires human review",
+    "Published SI reconciliation is not implemented"
+  ]
+}
