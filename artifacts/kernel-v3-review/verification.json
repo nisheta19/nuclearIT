@@ -1,0 +1,20 @@
+{
+  "run": "C:\\ostrovok\\nuclearIT\\artifacts\\kernel-v3",
+  "artifacts_checked": 56,
+  "input_hashes_unchanged": true,
+  "all_labels_and_smiles_unchanged": true,
+  "outer_folds_checked": 45,
+  "inner_schemes_per_outer_fold": 2,
+  "held_out_rows_excluded_from_inner_search": true,
+  "historical_folds_identical": true,
+  "mse_recomputed_from_oof": true,
+  "saved_submission_byte_identical_after_reload": true,
+  "seed_comparisons_improved": 8,
+  "seed_comparisons_total": 9,
+  "submission": {
+    "valid_format": true,
+    "rows": 597,
+    "sha256": "0254ca3461ff465148c40268cd74613ff1ae9902d2164f8518d2cc69f64c44e3",
+    "quality_verified": false
+  }
+}

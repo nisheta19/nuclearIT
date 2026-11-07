@@ -1,0 +1,91 @@
+{
+  "strategy": "advanced_search",
+  "promoted": true,
+  "final_model": "two_stage:r3_binary:a1:C0.1",
+  "fingerprint": {
+    "feature_sets": [
+      {
+        "name": "r2_binary",
+        "radius": 2,
+        "bits": 2048,
+        "kind": "binary",
+        "include_chirality": true,
+        "atom_invariants": "connectivity",
+        "descriptors": []
+      },
+      {
+        "name": "r3_binary",
+        "radius": 3,
+        "bits": 2048,
+        "kind": "binary",
+        "include_chirality": true,
+        "atom_invariants": "connectivity",
+        "descriptors": []
+      },
+      {
+        "name": "r2_features",
+        "radius": 2,
+        "bits": 2048,
+        "kind": "binary",
+        "include_chirality": true,
+        "atom_invariants": "features",
+        "descriptors": []
+      }
+    ]
+  },
+  "candidate_from_full_train_cv": {
+    "id": "two_stage:r3_binary:a1:C0.1",
+    "family": "two_stage",
+    "representation": 1,
+    "alpha": 1.0,
+    "C": 0.1,
+    "threshold": 10000.0
+  },
+  "promotion_checks": [
+    {
+      "phase": "historical",
+      "scheme": "structure",
+      "baseline_mse": 15578163.577337978,
+      "candidate_mse": 14816985.026827827,
+      "improvement_percent": 4.886189227191451,
+      "passed": true
+    },
+    {
+      "phase": "historical",
+      "scheme": "scaffold",
+      "baseline_mse": 19638230.02338382,
+      "candidate_mse": 18713792.96057371,
+      "improvement_percent": 4.7073339181247675,
+      "passed": true
+    },
+    {
+      "phase": "additional",
+      "scheme": "structure",
+      "baseline_mse": 15449521.508522019,
+      "candidate_mse": 14421766.978341678,
+      "improvement_percent": 6.652338906505473,
+      "passed": true
+    },
+    {
+      "phase": "additional",
+      "scheme": "scaffold",
+      "baseline_mse": 17924489.79288443,
+      "candidate_mse": 17010830.457494132,
+      "improvement_percent": 5.097268295764823,
+      "passed": true
+    }
+  ],
+  "rule": "Strictly lower MSE than released v3 selection procedure for both structure and scaffold, in both historical and additional cohorts. Family ablations are descriptive only. Bootstrap intervals are conditional diagnostics, not independent test evidence.",
+  "comparison_candidate": "advanced_search",
+  "reference_strategy": "incumbent_v3",
+  "reference_label": "Выпущенная версия v3",
+  "model_labels": {
+    "incumbent_v3": "Выпущенная версия v3",
+    "baseline_ridge": "Исходный Ridge",
+    "advanced_search": "Ансамбли и двухэтапная модель",
+    "ensemble_only": "Отдельно: ансамбли",
+    "two_stage_only": "Отдельно: двухэтапная модель",
+    "mean": "Среднее train"
+  },
+  "external_data_used": false
+}

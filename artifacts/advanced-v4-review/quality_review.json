@@ -1,0 +1,26 @@
+{
+  "software_tests": 49,
+  "software_tests_passed": true,
+  "test_log": ".pytest-work/advanced-004.log",
+  "model_verification": "verification.json",
+  "batch_http_verification": "batch_api_verification.json",
+  "browser_verification": "../browser_verification.json",
+  "ui_review": "ui_review.md",
+  "design_check": "design_documentation_check.md",
+  "independent_ui_agent_available": false,
+  "ui_agent_failure": "HTTP 403; two reviewer attempts and one documenter attempt failed before review. In-thread checks substituted and disclosed.",
+  "fixes_during_verification": [
+    "CSV delimiter detection now parses quoted headers rather than counting delimiter characters.",
+    "Reference OOF comparisons allow only CSV roundtrip precision (rtol1e-14,atol1e-10); observed maximum difference was9.1e-13.",
+    "Large-input test identifiers shortened to avoid Windows environment limit; similarity test fixture uses the fixed2048-bit diagnostic fingerprint.",
+    "Browser check scopes scroll hints to the active view."
+  ],
+  "limits": [
+    "Medical review not performed;89 queue records remain pending.",
+    "All evaluation splits use the same320-row organizer train; adaptive development and promotion use outer results.",
+    "Bootstrap is conditional on saved OOF predictions and does not include refitting uncertainty.",
+    "Historical scaffold MSE-difference interval crosses zero.",
+    "UI visual review is self-review because separate agents were unavailable.",
+    "Browser coverage: local Edge at1440px and390px; not every device/browser."
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-07T15:36:37.421Z",
+  "title": "Design System: VACV SI Workbench",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Sage Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0079 106.55)",
+          "oklch(26.43% 0.0079 106.55)",
+          "oklch(37.86% 0.0079 106.55)",
+          "oklch(49.29% 0.0079 106.55)",
+          "oklch(60.71% 0.0079 106.55)",
+          "oklch(72.14% 0.0079 106.55)",
+          "oklch(83.57% 0.0079 106.55)",
+          "oklch(95% 0.0079 106.55)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White Work Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26.43% 0.0000 89.88)",
+          "oklch(37.86% 0.0000 89.88)",
+          "oklch(49.29% 0.0000 89.88)",
+          "oklch(60.71% 0.0000 89.88)",
+          "oklch(72.14% 0.0000 89.88)",
+          "oklch(83.57% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Green Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0467 180.11)",
+          "oklch(26.43% 0.0467 180.11)",
+          "oklch(37.86% 0.0467 180.11)",
+          "oklch(49.29% 0.0467 180.11)",
+          "oklch(60.71% 0.0467 180.11)",
+          "oklch(72.14% 0.0467 180.11)",
+          "oklch(83.57% 0.0467 180.11)",
+          "oklch(95% 0.0467 180.11)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Body Green",
+        "tonalRamp": [
+          "oklch(15% 0.0448 175.62)",
+          "oklch(26.43% 0.0448 175.62)",
+          "oklch(37.86% 0.0448 175.62)",
+          "oklch(49.29% 0.0448 175.62)",
+          "oklch(60.71% 0.0448 175.62)",
+          "oklch(72.14% 0.0448 175.62)",
+          "oklch(83.57% 0.0448 175.62)",
+          "oklch(95% 0.0448 175.62)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Caption Grey-Green",
+        "tonalRamp": [
+          "oklch(15% 0.0204 164.00)",
+          "oklch(26.43% 0.0204 164.00)",
+          "oklch(37.86% 0.0204 164.00)",
+          "oklch(49.29% 0.0204 164.00)",
+          "oklch(60.71% 0.0204 164.00)",
+          "oklch(72.14% 0.0204 164.00)",
+          "oklch(83.57% 0.0204 164.00)",
+          "oklch(95% 0.0204 164.00)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Pale Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0143 138.71)",
+          "oklch(26.43% 0.0143 138.71)",
+          "oklch(37.86% 0.0143 138.71)",
+          "oklch(49.29% 0.0143 138.71)",
+          "oklch(60.71% 0.0143 138.71)",
+          "oklch(72.14% 0.0143 138.71)",
+          "oklch(83.57% 0.0143 138.71)",
+          "oklch(95% 0.0143 138.71)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Specimen Green",
+        "tonalRamp": [
+          "oklch(15% 0.0848 172.92)",
+          "oklch(26.43% 0.0848 172.92)",
+          "oklch(37.86% 0.0848 172.92)",
+          "oklch(49.29% 0.0848 172.92)",
+          "oklch(60.71% 0.0848 172.92)",
+          "oklch(72.14% 0.0848 172.92)",
+          "oklch(83.57% 0.0848 172.92)",
+          "oklch(95% 0.0848 172.92)"
+        ]
+      },
+      "ochre": {
+        "role": "secondary",
+        "displayName": "Evidence Ochre",
+        "tonalRamp": [
+          "oklch(15% 0.0966 68.37)",
+          "oklch(26.43% 0.0966 68.37)",
+          "oklch(37.86% 0.0966 68.37)",
+          "oklch(49.29% 0.0966 68.37)",
+          "oklch(60.71% 0.0966 68.37)",
+          "oklch(72.14% 0.0966 68.37)",
+          "oklch(83.57% 0.0966 68.37)",
+          "oklch(95% 0.0966 68.37)"
+        ]
+      },
+      "error": {
+        "role": "secondary",
+        "displayName": "Error Red",
+        "tonalRamp": [
+          "oklch(15% 0.1502 28.37)",
+          "oklch(26.43% 0.1502 28.37)",
+          "oklch(37.86% 0.1502 28.37)",
+          "oklch(49.29% 0.1502 28.37)",
+          "oklch(60.71% 0.1502 28.37)",
+          "oklch(72.14% 0.1502 28.37)",
+          "oklch(83.57% 0.1502 28.37)",
+          "oklch(95% 0.1502 28.37)"
+        ]
+      },
+      "soft": {
+        "role": "primary",
+        "displayName": "Sage Wash",
+        "tonalRamp": [
+          "oklch(15% 0.0135 134.90)",
+          "oklch(26.43% 0.0135 134.90)",
+          "oklch(37.86% 0.0135 134.90)",
+          "oklch(49.29% 0.0135 134.90)",
+          "oklch(60.71% 0.0135 134.90)",
+          "oklch(72.14% 0.0135 134.90)",
+          "oklch(83.57% 0.0135 134.90)",
+          "oklch(95% 0.0135 134.90)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Deep Action Green",
+        "tonalRamp": [
+          "oklch(15% 0.0726 169.35)",
+          "oklch(26.43% 0.0726 169.35)",
+          "oklch(37.86% 0.0726 169.35)",
+          "oklch(49.29% 0.0726 169.35)",
+          "oklch(60.71% 0.0726 169.35)",
+          "oklch(72.14% 0.0726 169.35)",
+          "oklch(83.57% 0.0726 169.35)",
+          "oklch(95% 0.0726 169.35)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field Stroke",
+        "tonalRamp": [
+          "oklch(15% 0.0239 147.37)",
+          "oklch(26.43% 0.0239 147.37)",
+          "oklch(37.86% 0.0239 147.37)",
+          "oklch(49.29% 0.0239 147.37)",
+          "oklch(60.71% 0.0239 147.37)",
+          "oklch(72.14% 0.0239 147.37)",
+          "oklch(83.57% 0.0239 147.37)",
+          "oklch(95% 0.0239 147.37)"
+        ]
+      },
+      "result-paper": {
+        "role": "neutral",
+        "displayName": "Result Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0054 117.92)",
+          "oklch(26.43% 0.0054 117.92)",
+          "oklch(37.86% 0.0054 117.92)",
+          "oklch(49.29% 0.0054 117.92)",
+          "oklch(60.71% 0.0054 117.92)",
+          "oklch(72.14% 0.0054 117.92)",
+          "oklch(83.57% 0.0054 117.92)",
+          "oklch(95% 0.0054 117.92)"
+        ]
+      },
+      "error-paper": {
+        "role": "secondary",
+        "displayName": "Error Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0188 46.81)",
+          "oklch(26.43% 0.0188 46.81)",
+          "oklch(37.86% 0.0188 46.81)",
+          "oklch(49.29% 0.0188 46.81)",
+          "oklch(60.71% 0.0188 46.81)",
+          "oklch(72.14% 0.0188 46.81)",
+          "oklch(83.57% 0.0188 46.81)",
+          "oklch(95% 0.0188 46.81)"
+        ]
+      },
+      "selected-row": {
+        "role": "primary",
+        "displayName": "Selected Sage",
+        "tonalRamp": [
+          "oklch(15% 0.0169 137.03)",
+          "oklch(26.43% 0.0169 137.03)",
+          "oklch(37.86% 0.0169 137.03)",
+          "oklch(49.29% 0.0169 137.03)",
+          "oklch(60.71% 0.0169 137.03)",
+          "oklch(72.14% 0.0169 137.03)",
+          "oklch(83.57% 0.0169 137.03)",
+          "oklch(95% 0.0169 137.03)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Page Heading",
+        "purpose": "Concise task title; fixed 31px on narrow screens."
+      },
+      "headline": {
+        "displayName": "Section Heading",
+        "purpose": "Workbench and quality sections."
+      },
+      "title": {
+        "displayName": "Context Heading",
+        "purpose": "Short explanation and neighbor headings."
+      },
+      "body": {
+        "displayName": "Reading Text",
+        "purpose": "Default introductory reading text."
+      },
+      "label": {
+        "displayName": "Caption",
+        "purpose": "Status, helper text, figure captions, and table labels."
+      },
+      "control": {
+        "displayName": "Action Label",
+        "purpose": "Primary and secondary button text."
+      },
+      "structure": {
+        "displayName": "Molecular Notation",
+        "purpose": "Editable SMILES textarea."
+      },
+      "estimate": {
+        "displayName": "SI Estimate",
+        "purpose": "Principal result with tabular numerals; similarity remains smaller."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "control-background",
+        "value": "background .15s",
+        "purpose": "Button hover transition."
+      },
+      {
+        "name": "scroll-behavior",
+        "value": "smooth",
+        "purpose": "Default scrolling; reduced motion restores auto."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}",
+        "purpose": "Respect reduced-motion preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "900px"
+      },
+      {
+        "name": "narrow",
+        "value": "650px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The calculation action, with the shipped outline arrow and focus state.",
+      "html": "<button class=\"ds-button ds-primary\">Рассчитать SI <svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M3 10h13m-5-5 5 5-5 5\"/></svg></button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:44px;padding:10px 18px;border-radius:6px;border:1px solid transparent;font:550 13px/1.6 var(--font, Golos, sans-serif);text-decoration:none;cursor:pointer;transition:background .15s}.ds-button:focus-visible{outline:3px solid var(--ochre, #926227);outline-offset:4px}.ds-button:disabled{cursor:wait;opacity:.65}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-primary{background:var(--accent, #176d59);color:var(--white, #fff)}.ds-primary:hover{background:#125542}.ds-primary svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "The example-loading action and secondary download treatment.",
+      "html": "<button class=\"ds-button ds-secondary\">Загрузить пример</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:44px;padding:10px 18px;border-radius:6px;border:1px solid transparent;font:550 13px/1.6 var(--font, Golos, sans-serif);text-decoration:none;cursor:pointer;transition:background .15s}.ds-button:focus-visible{outline:3px solid var(--ochre, #926227);outline-offset:4px}.ds-button:disabled{cursor:wait;opacity:.65}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-secondary{color:var(--ink, #173f38);border-color:var(--line, #d6ddd4);background:var(--white, #fff)}.ds-secondary:hover{background:var(--soft, #e8eee5)}"
+    },
+    {
+      "name": "SMILES Input",
+      "kind": "input",
+      "refersTo": "structure-input",
+      "description": "The labeled mono textarea with helper text and persistent focus outline.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-smiles\">SMILES</label><textarea id=\"ds-smiles\" rows=\"5\" maxlength=\"2000\" spellcheck=\"false\" aria-describedby=\"ds-help\" placeholder=\"Например, строка структуры из тестового набора\"></textarea><p id=\"ds-help\">Без CC50, IC50 и экспериментальных метаданных.</p></div>",
+      "css": ".ds-field{font:15px/1.6 var(--font, Golos, sans-serif);color:var(--ink, #173f38)}.ds-field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}.ds-field textarea{box-sizing:border-box;display:block;width:100%;resize:vertical;min-height:132px;max-height:320px;background:var(--white, #fff);border:1px solid #aab8ab;border-radius:6px;padding:14px;color:var(--ink, #173f38);font:14px/1.6 Consolas,monospace;overflow-wrap:anywhere;caret-color:var(--accent, #176d59)}.ds-field textarea::placeholder{color:#69786d;font:13px var(--font, Golos, sans-serif)}.ds-field textarea:focus{outline:2px solid var(--accent, #176d59);outline-offset:2px}.ds-field p{margin:8px 0 0;font-size:12px;color:var(--muted, #56645d)}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Two direct destinations, with a persistent current-page underline.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Основная навигация\"><a href=\"#predict\" aria-current=\"page\">Прогноз</a><a href=\"#quality\">Проверка качества</a></nav>",
+      "css": ".ds-nav{display:flex;gap:30px;height:84px;align-items:center;background:var(--white, #fff);font:14px/1.6 var(--font, Golos, sans-serif)}.ds-nav a{height:100%;align-content:center;text-decoration:none;color:var(--muted, #56645d);border-bottom:2px solid transparent}.ds-nav a[aria-current]{color:var(--ink, #173f38);border-bottom-color:var(--accent, #176d59);font-weight:600}.ds-nav a:hover{color:var(--accent, #176d59)}.ds-nav a:focus-visible{outline:3px solid var(--ochre, #926227);outline-offset:4px}@media(max-width:650px){.ds-nav{height:45px;gap:26px;font-size:13px}}"
+    },
+    {
+      "name": "Decision Container",
+      "kind": "card",
+      "refersTo": "decision",
+      "description": "The validation decision surface, shown in its actual loading state to avoid fabricated findings.",
+      "html": "<section class=\"ds-decision\"><h2>Загружаем результат…</h2></section>",
+      "css": ".ds-decision{background:var(--soft, #e8eee5);padding:24px 28px;border-radius:var(--radius,12px);color:var(--ink, #173f38);font:15px/1.6 var(--font, Golos, sans-serif)}.ds-decision h2{font-size:18px;line-height:1.35;font-weight:580;margin:0}.ds-decision p{margin:9px 0 0;max-width:900px;font-size:14px}@media(max-width:650px){.ds-decision{padding:21px}}"
+    },
+    {
+      "name": "Empty Specimen",
+      "kind": "custom",
+      "refersTo": "result-surface",
+      "description": "The shipped molecular empty state before an estimate exists.",
+      "html": "<section class=\"ds-result\"><h2>Структура и результат</h2><div class=\"ds-empty\"><svg viewBox=\"0 0 130 90\" width=\"130\" height=\"90\" aria-hidden=\"true\"><path d=\"m35 20 26 15v30L35 80 9 65V35Zm26 15 26-15 26 15v30L87 80 61 65M35 28v42M69 39l18-10m0 42 18-10\"/></svg><p>Здесь появится молекула</p><span>Рассчитайте свою структуру или загрузите пример из test.</span></div></section>",
+      "css": ".ds-result{padding:28px 30px 26px;background:#fbfcf8;border:1px solid var(--line, #d6ddd4);font:15px/1.6 var(--font, Golos, sans-serif);color:var(--ink, #173f38)}.ds-result h2{font-size:18px;line-height:1.35;font-weight:580;margin:0}.ds-empty{box-sizing:border-box;min-height:328px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}.ds-empty svg{fill:none;stroke:#98b3a2;stroke-width:1.4;margin-bottom:22px}.ds-empty p{margin:0 0 7px;font-size:17px}.ds-empty span{font-size:13px;color:var(--muted, #56645d);max-width:270px}@media(max-width:650px){.ds-result{padding:23px 20px}.ds-result h2{font-size:16px}.ds-empty{min-height:235px}}"
+    },
+    {
+      "name": "Error Notice",
+      "kind": "custom",
+      "refersTo": "error",
+      "description": "The actual empty-input validation message.",
+      "html": "<p class=\"ds-error\" role=\"alert\">Введите SMILES или загрузите пример.</p>",
+      "css": ".ds-error{background:#fff0e9;color:var(--error,#a5342b);padding:12px 14px;border-radius:6px;margin-top:16px;font:13px/1.6 var(--font, Golos, sans-serif)}"
+    },
+    {
+      "name": "Scientific Disclosure",
+      "kind": "custom",
+      "description": "Native disclosure for canonical notation, with visible keyboard focus.",
+      "html": "<details class=\"ds-details\"><summary>Канонический SMILES</summary><code>SMILES появится после расчёта.</code></details>",
+      "css": ".ds-details{font:12px/1.6 var(--font, Golos, sans-serif);margin-top:16px;color:var(--text,#24483f)}.ds-details summary{cursor:pointer;color:var(--accent, #176d59)}.ds-details summary:focus-visible{outline:3px solid var(--ochre, #926227);outline-offset:4px}.ds-details code{display:block;margin-top:12px;overflow-wrap:anywhere;font-size:12px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Botanical Specimen Collection",
+    "overview": "The botanical specimen collection is expressed through pale sage paper, dark green typography, economical rules, and precise captions. The molecular drawing is the visual subject; surrounding controls stay quiet and legible.\n\nThis is a compact research workbench. The interface pairs an editable structure with a readable result, then makes the validation evidence available through the same navigation. Russian copy uses self-hosted Golos Text; tabular numerals keep scientific values stable. Status, error, and model limitations remain written information.",
+    "keyCharacteristics": [
+      "Pale sage paper with white working surfaces and a subtly tinted result surface.",
+      "One green action accent; ochre focus outlines; explicit textual states.",
+      "Compact variable-weight typography and tabular scientific values.",
+      "Flat, lightly ruled containers; molecular drawings and scientific plots carry the imagery."
+    ],
+    "rules": [
+      {
+        "name": "The Green Action Rule",
+        "body": "Use the green accent for actionable controls, links, selected navigation, and readiness. Preserve written status alongside color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Measured Hierarchy Rule",
+        "body": "Keep the main estimate visually stronger than similarity, and retain labels and explanatory text beside both.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ruled Surface Rule",
+        "body": "Separate working regions with pale borders and surface tones. The shipped interface has no box shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the actual molecular drawing and scientific plots as the primary imagery.",
+      "Do retain written state labels, visible keyboard focus, and the reduced-motion override.",
+      "Do keep numerical table columns right aligned and use tabular numerals.",
+      "Do preserve input, result, then explanatory context in the narrow-screen reading order.",
+      "Do provide keyboard-accessible horizontal scrolling and a full-image link for wide plots."
+    ],
+    "donts": [
+      "Don't replace scientific evidence with decorative science imagery.",
+      "Don't promote similarity into a confidence probability or make a model estimate look like a measurement.",
+      "Don't add decorative shadows to the flat ruled surfaces.",
+      "Don't convey active navigation, errors, or model readiness through color alone."
+    ]
+  }
+}

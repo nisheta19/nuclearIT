@@ -1,0 +1,19 @@
+{
+  "tests_passed": 16,
+  "raw_bytes_equal_source_archive": true,
+  "code_and_artifact_hashes_verified": true,
+  "reloaded_submission_byte_identical": true,
+  "fold_group_leakage": false,
+  "oof_predictions": 6400,
+  "oof_targets_preserved": true,
+  "mse_recomputed_from_oof": true,
+  "dependencies_check": "pip check passed",
+  "external_data_used": false,
+  "submission_rows": 597,
+  "primary_error_share_by_target": {
+    "zero": 0.00016862095765184419,
+    "below_10000": 0.3452113415877199,
+    "10000": 0.39170357184841476,
+    "above_10000": 0.26291646560621357
+  }
+}

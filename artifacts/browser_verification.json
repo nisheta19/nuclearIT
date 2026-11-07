@@ -1,0 +1,38 @@
+[
+  {
+    "run": "advanced-v4",
+    "viewport": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "empty_invalid_valid_inputs": true,
+    "stale_result_cleared_on_edit_and_example": true,
+    "run_caption_visible": true,
+    "molecule_rendered": true,
+    "neighbors": 3,
+    "quality_rows": 6,
+    "batch_csv_upload_export_pagination_filters_errors_stale_state": true,
+    "reliability_rows": 4,
+    "range_rows": 14,
+    "medical_queue_download": true,
+    "horizontal_page_overflow": false,
+    "js_errors": []
+  },
+  {
+    "run": "advanced-v4",
+    "viewport": "mobile",
+    "width": 390,
+    "height": 844,
+    "empty_invalid_valid_inputs": true,
+    "stale_result_cleared_on_edit_and_example": true,
+    "run_caption_visible": true,
+    "molecule_rendered": true,
+    "neighbors": 3,
+    "quality_rows": 6,
+    "batch_csv_upload_export_pagination_filters_errors_stale_state": true,
+    "reliability_rows": 4,
+    "range_rows": 14,
+    "medical_queue_download": true,
+    "horizontal_page_overflow": false,
+    "js_errors": []
+  }
+]

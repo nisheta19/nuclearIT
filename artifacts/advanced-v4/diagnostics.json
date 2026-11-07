@@ -1,0 +1,93 @@
+{
+  "primary_seed": 42,
+  "strategy": "advanced_search",
+  "invalid_test": 0,
+  "test_similarity_median": 0.7045454382896423,
+  "test_below_0_3": 46,
+  "test_below_0_5": 114,
+  "duplicate_groups": 8,
+  "conflicting_groups": 3,
+  "rounding_groups": 3,
+  "largest_target_review": {
+    "row_id": "14",
+    "target": 36066.667,
+    "primary_oof_prediction": 261.263263436191,
+    "primary_error_share": 0.28162547175047753,
+    "canonical_smiles": "CC1(C)[C@@H]2CC[C@@]1(C)[C@@H](NC(=O)c1ccc([N+](=O)[O-])cc1)C2",
+    "organizer_metadata": {
+      "Title": "8e-as-555-15-16",
+      "strain": "Vaccinia virus (strain Copenhagen). culture Vero, cowpox virus (strain_Grishak), ectromelia virus (ECTV, strain K-1)",
+      "Culture": "Vero"
+    },
+    "medical_verification": "not performed; no primary publication supplied",
+    "action": "Preserve label and row; inspect original experimental provenance when reviewed data arrive.",
+    "all_outer_predictions": [
+      {
+        "scheme": "scaffold",
+        "seed": -1,
+        "fold": 1,
+        "y_true": 36066.667,
+        "y_pred": 0.0
+      },
+      {
+        "scheme": "scaffold",
+        "seed": 701,
+        "fold": 1,
+        "y_true": 36066.667,
+        "y_pred": 1733.1853014084509
+      },
+      {
+        "scheme": "scaffold",
+        "seed": 1709,
+        "fold": 2,
+        "y_true": 36066.667,
+        "y_pred": 1439.0343426630218
+      },
+      {
+        "scheme": "structure",
+        "seed": 42,
+        "fold": 4,
+        "y_true": 36066.667,
+        "y_pred": 261.263263436191
+      },
+      {
+        "scheme": "structure",
+        "seed": 137,
+        "fold": 0,
+        "y_true": 36066.667,
+        "y_pred": 476.23163142801343
+      },
+      {
+        "scheme": "structure",
+        "seed": 701,
+        "fold": 4,
+        "y_true": 36066.667,
+        "y_pred": 273.40705228169736
+      },
+      {
+        "scheme": "structure",
+        "seed": 1709,
+        "fold": 1,
+        "y_true": 36066.667,
+        "y_pred": 351.1506822036929
+      },
+      {
+        "scheme": "structure",
+        "seed": 2026,
+        "fold": 2,
+        "y_true": 36066.667,
+        "y_pred": 0.0
+      },
+      {
+        "scheme": "structure",
+        "seed": 4219,
+        "fold": 1,
+        "y_true": 36066.667,
+        "y_pred": 0.0
+      }
+    ]
+  },
+  "label_changes": 0,
+  "external_data_used": false,
+  "similarity_note": "Tanimoto on chiral Morgan radius=2/2048 binary bits. Descriptive coverage, not calibrated confidence. Bins are exploratory; do not select model or discard rows with them."
+}

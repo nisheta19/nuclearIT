@@ -1,0 +1,13 @@
+phase,scheme,model,mse,seed_sd,seed_count
+additional,scaffold,baseline_ridge,18819156.06873831,865733.3495126334,2
+additional,scaffold,mean,22890192.02936474,139327.87687365376,2
+additional,scaffold,robust_search,17924489.79288443,1092452.5210482082,2
+additional,structure,baseline_ridge,15972281.66450783,1218726.005941165,3
+additional,structure,mean,22341513.39318119,170955.0860201734,3
+additional,structure,robust_search,15449521.508522019,861447.5289368642,3
+historical,scaffold,baseline_ridge,20267043.82346254,0.0,1
+historical,scaffold,mean,22386726.638074756,0.0,1
+historical,scaffold,robust_search,19638230.02338382,0.0,1
+historical,structure,baseline_ridge,15979326.866942538,892207.4182441386,3
+historical,structure,mean,22156866.935883693,38431.52724438569,3
+historical,structure,robust_search,15578163.577337978,514622.1556696912,3

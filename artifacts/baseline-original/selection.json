@@ -1,0 +1,6 @@
+{
+  "model": "ridge_si",
+  "criterion": "minimum mean structure-grouped OOF MSE over predeclared seeds",
+  "independent_test": false,
+  "external_data_used": false
+}

@@ -1,0 +1,15 @@
+{
+  "tests_passed": 27,
+  "dataset_sha256_verified": true,
+  "source_snapshot_hashes_verified": true,
+  "artifact_hashes_verified": true,
+  "nested_group_leakage": false,
+  "outer_validation_folds": 20,
+  "inner_membership_rows": 5120,
+  "oof_rows": 8960,
+  "oof_targets_preserved": true,
+  "mse_recomputed": true,
+  "promoted": false,
+  "submission_identical_to_baseline": true,
+  "external_data_used": false
+}

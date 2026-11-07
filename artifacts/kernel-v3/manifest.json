@@ -1,0 +1,97 @@
+{
+  "dataset_version": "hakathonMiphi-original-user-authorized-2026-11-07",
+  "observed": {
+    "train_rows": 320,
+    "test_rows": 597,
+    "zero_targets": 2,
+    "targets_10000": 81
+  },
+  "inputs": {
+    "train": {
+      "path": "C:\\ostrovok\\nuclearIT\\data\\raw\\competition\\train.csv",
+      "sha256": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+      "bytes": 45041,
+      "columns": [
+        "Title",
+        "CC50_uM",
+        "IC50_uM_VACV",
+        "SI VACV",
+        "SMILES",
+        "strain",
+        "Culture"
+      ]
+    },
+    "test": {
+      "path": "C:\\ostrovok\\nuclearIT\\data\\raw\\competition\\test.csv",
+      "sha256": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+      "bytes": 83025,
+      "columns": [
+        "index",
+        "Title",
+        "CC50_uM",
+        "IC50_uM_VACV",
+        "SMILES",
+        "strain",
+        "Culture"
+      ]
+    },
+    "sample": {
+      "path": "C:\\ostrovok\\nuclearIT\\data\\raw\\competition\\sample_submit.csv",
+      "sha256": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c",
+      "bytes": 13725,
+      "columns": [
+        "index",
+        "SI VACV"
+      ]
+    }
+  },
+  "features_from": [
+    "SMILES"
+  ],
+  "external_data_used": false,
+  "sample_values_used": false,
+  "target_changes": 0,
+  "environment": {
+    "python": "3.12.0",
+    "packages": {
+      "numpy": "2.2.6",
+      "pandas": "2.2.3",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.6.1",
+      "rdkit": "2025.3.3",
+      "joblib": "1.5.1"
+    }
+  },
+  "structure_policy": {
+    "canonical": "RDKit canonical isomeric SMILES; atom map numbers removed",
+    "preserved": [
+      "stereochemistry",
+      "isotopes",
+      "charges",
+      "all fragments",
+      "tautomer form"
+    ],
+    "salt_stripping": false,
+    "neutralization": false,
+    "tautomer_normalization": false,
+    "scaffold": "Bemis-Murcko without chirality; all acyclic molecules share ACYCLIC group",
+    "invalid_train": "fail with audit; no silent exclusions",
+    "invalid_test": "mean of training labels, with explicit fallback flag"
+  },
+  "code_sha256": {
+    "vacv\\__init__.py": "5d2ad9fffd7af28cc37f78ad358c6a3f6848a0d57db402be00ba4da7c8f57b25",
+    "vacv\\__main__.py": "25e5a9629965631133f584601dfbb2442dc499625ae16ff1f49a6ce0390c0935",
+    "vacv\\chemistry.py": "0fb529b918c8a84b11c603f9770c24ccfa8ffd3e3312850885cb0713ef3f3593",
+    "vacv\\data.py": "b1297a2d549d9a775e9d3e726172f009b7826268f9f0421b99f9ca9103526b80",
+    "vacv\\diagnostics.py": "e1b835dd0f650324759782f16b8bd17e2e7e5e05d1ccf3156dbb9caf0e22ab50",
+    "vacv\\experiment.py": "52b92ff7985a8335863baf7f918b2d46087dac5bc43f4951c85bf12762fb3f3c",
+    "vacv\\kernel.py": "d22605c30a3dbbcbb47c3565332dbfa40961357fb9b8588d15ad763e80eb3e80",
+    "vacv\\models.py": "4a2d5eefe131186b320521de0300fdec9042bb03edde970f46b8f72c16551962",
+    "vacv\\pipeline.py": "6e867e7c4f757844dd5614429962b52383b39b73f2f8cc9bdbd4b68ed8203fd9",
+    "vacv\\robust_experiment.py": "b34a437c2ebfbab1ee868ccab5d7874bd41df3a07ca1d9810c09e52402ee7cc1",
+    "vacv\\robust_search.py": "e60db1c35828bc5b0c44d803cc5de890aeeaad2e0c7f1e9150249ccd1ee432fb",
+    "vacv\\search.py": "c857e61b8baad02ded9ff543ff4d19a2759f4c93799490a23919f1bf77415986",
+    "vacv\\server.py": "34ba9a21e02c7c631356be97e906337c7774b6cc96947125c276ac40ea505d02",
+    "vacv\\validation.py": "4d4fc4ce7a3aa44e9eb9324e4ceaa3e68973bfec971b154988b9ce625e87cf85"
+  }
+}

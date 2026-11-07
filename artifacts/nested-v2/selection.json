@@ -1,0 +1,18 @@
+{
+  "strategy": "baseline_ridge",
+  "promoted": false,
+  "final_model": "ridge_si",
+  "fingerprint": {
+    "radius": 2,
+    "bits": 2048,
+    "include_chirality": true
+  },
+  "candidate_from_full_train_cv": {
+    "feature_set": "r2_binary",
+    "alpha": 10.0,
+    "mse": 14766790.243536556
+  },
+  "rule": "Promote the predeclared full search only if structure MSE improves AND scaffold MSE does not worsen against frozen baseline. Per-feature ablations are diagnostic only.",
+  "caveat": "Nested scores evaluate the search procedure. The promotion decision uses these scores; no untouched final test exists. Repeated seeds are not independent data.",
+  "external_data_used": false
+}

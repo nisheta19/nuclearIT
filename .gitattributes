@@ -1,0 +1,8 @@
+# Preserve exact bytes: organizer data, experiment snapshots and artifacts are SHA-256 pinned.
+# Disabling text normalization also overrides a user's core.autocrlf=true on checkout.
+* -text
+*.joblib binary
+*.png binary
+*.zip binary
+*.docx binary
+*.ttf binary

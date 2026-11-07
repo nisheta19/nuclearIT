@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173f38">
+  <title>VACV SI — проверка молекулы</title>
+  <link rel="stylesheet" href="/app.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержимому</a>
+  <header class="topbar">
+    <a class="brand" href="#predict" aria-label="VACV SI, прогноз"><svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true"><path d="M14 2 25 8v12l-11 6L3 20V8Z M14 8v12 M8 11l12 6 M20 11 8 17"/></svg>VACV <span>SI</span></a>
+    <nav aria-label="Основная навигация"><a href="#predict" id="nav-predict" aria-current="page">Прогноз</a><a href="#batch" id="nav-batch">Список молекул</a><a href="#quality" id="nav-quality">Качество</a></nav>
+    <span class="local">На вашем компьютере</span>
+  </header>
+  <main id="main">
+    <div id="connection-error" class="error" role="alert" hidden></div>
+    <section id="predict-view" aria-labelledby="page-title">
+      <div class="intro"><div><h1 id="page-title">От структуры к прогнозу.</h1><p>Введите SMILES, чтобы получить модельную оценку индекса селективности против VACV и увидеть похожие структуры в обучении.</p></div><div class="experiment-note"><span class="status-dot"></span><span>Модель готова<br><small id="run-label">Загружаем сведения…</small></span></div></div>
+      <div class="workspace">
+        <section class="input-area" aria-labelledby="input-heading">
+          <div class="section-heading"><h2 id="input-heading">Ваша молекула</h2><span class="quiet">Только структурные признаки</span></div>
+          <form id="predict-form">
+            <label for="smiles">SMILES</label>
+            <textarea id="smiles" name="smiles" rows="5" maxlength="2000" spellcheck="false" aria-describedby="smiles-help form-error" placeholder="Например, строка структуры из тестового набора"></textarea>
+            <p id="smiles-help" class="field-help">Без CC50, IC50 и экспериментальных метаданных.</p>
+            <div class="form-actions"><button type="submit" id="predict-button" class="primary">Рассчитать SI <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button><button type="button" id="example-button" class="secondary">Загрузить пример</button></div>
+            <p id="example-source" class="field-help" hidden></p>
+            <p id="form-error" class="error" role="alert" hidden></p>
+          </form>
+        </section>
+        <section class="result-area" aria-labelledby="result-heading" aria-live="polite" aria-busy="false">
+          <div class="section-heading"><h2 id="result-heading">Структура и результат</h2><span id="result-state" class="quiet">Ожидает SMILES</span></div>
+          <div id="empty-state" class="empty-state"><svg viewBox="0 0 130 90" width="130" height="90" aria-hidden="true"><path d="m35 20 26 15v30L35 80 9 65V35Zm26 15 26-15 26 15v30L87 80 61 65M35 28v42M69 39l18-10m0 42 18-10"/></svg><p>Здесь появится молекула</p><span>Рассчитайте свою структуру или загрузите пример из test.</span></div>
+          <div id="prediction-result" hidden>
+            <img id="molecule-image" alt="Двумерная структура введённой молекулы" width="600" height="320">
+            <div class="prediction-values"><div><span class="value-label">Прогноз SI</span><strong id="si-value"></strong></div><div><span class="value-label">Сходство с train</span><strong id="similarity-value" class="similarity-value"></strong><span class="quiet">Tanimoto · от 0 до 1</span></div></div>
+            <p id="prediction-note" class="result-note"></p>
+            <details><summary>Канонический SMILES</summary><code id="canonical-smiles"></code></details>
+          </div>
+        </section>
+        <section class="context-area" aria-label="Пояснение и похожие структуры">
+          <div class="boundary-note"><h3>Что означает результат</h3><p>SI здесь — прогноз модели, а не измерение. Сходство с обучающими структурами помогает оценить покрытие данных, но не является вероятностью правильного ответа.</p></div>
+          <div id="neighbors" hidden><h3>Ближайшие структуры train</h3><table><thead><tr><th>Строка</th><th>Сходство</th><th>Метка SI</th></tr></thead><tbody id="neighbor-rows"></tbody></table><p class="field-help">Метки приведены для сравнения. Они не переносятся в прогноз; условия экспериментов могут различаться.</p></div>
+        </section>
+      </div>
+      <div class="data-note"><span>Основа обучения</span><p id="dataset-description">Загружаем состав исходного набора организаторов…</p><a href="#quality">Посмотреть проверку</a></div>
+    </section>
+    <section id="batch-view" aria-labelledby="batch-title" hidden>
+      <div class="intro"><div><h1 id="batch-title">Проверить список молекул.</h1><p>Загрузите CSV со структурами. Получите прогнозы SI, сведения о покрытии обучения и строки, которые нужно исправить.</p></div></div>
+      <form id="batch-form" class="batch-upload">
+        <label for="batch-file">CSV со столбцом SMILES</label>
+        <input id="batch-file" type="file" accept=".csv,text/csv" aria-describedby="batch-help batch-error">
+        <p id="batch-help" class="field-help">UTF-8, до 2 МБ и 2000 строк. Разделитель: запятая, точка с запятой или табуляция. Необязательный index сохраняется; остальные столбцы игнорируются.</p>
+        <div class="form-actions"><button id="batch-button" class="primary" type="submit">Рассчитать список</button><button id="batch-template" class="secondary" type="button">Скачать пример CSV</button></div>
+        <p id="batch-error" class="error" role="alert" hidden></p>
+        <p id="batch-state" class="field-help" role="status">Выберите файл для расчёта.</p>
+      </form>
+      <section id="batch-results" class="batch-results" aria-labelledby="batch-result-title" hidden>
+        <div class="table-heading"><h2 id="batch-result-title">Результаты списка</h2><a id="batch-download" class="secondary" download="vacv-predictions.csv">Скачать результаты CSV</a></div>
+        <p id="batch-summary"></p><p id="batch-model" class="field-help"></p><p id="batch-note" class="field-help"></p>
+        <div class="batch-toolbar"><label for="batch-filter">Показать</label><select id="batch-filter"><option value="all">Все строки</option><option value="invalid">Только ошибки</option><option value="low">Сходство ниже 0,5</option></select><span id="batch-page" class="quiet"></span></div>
+        <p class="scroll-hint">Листайте таблицу вбок. Полные SMILES и версия модели доступны в выгрузке.</p>
+        <div class="table-scroll" tabindex="0" aria-label="Результаты списка, прокрутка по горизонтали"><table class="batch-table"><thead><tr><th>Строка / index</th><th>SMILES</th><th>Прогноз SI</th><th>Сходство</th><th>Статус</th></tr></thead><tbody id="batch-rows"></tbody></table></div>
+        <p id="batch-no-rows" class="field-help" hidden>Нет строк, соответствующих фильтру.</p>
+        <div class="form-actions"><button id="batch-prev" class="secondary" type="button">Предыдущие</button><button id="batch-next" class="secondary" type="button">Следующие</button></div>
+      </section>
+    </section>
+    <section id="quality-view" aria-labelledby="quality-title" hidden>
+      <div class="intro"><div><h1 id="quality-title">Качество с оговорками.</h1><p>Подбор параметров проходит внутри обучающих фолдов. Здесь показаны результаты внешней проверки в исходной шкале SI.</p></div><a href="/download/report.md" download class="secondary download">Скачать отчёт</a></div>
+      <div class="decision"><h2 id="decision-title">Загружаем результат…</h2><p id="decision-description"></p></div>
+      <div class="table-heading"><h2>Сравнение стратегий</h2><span class="quiet">MSE · меньше лучше</span></div>
+      <p class="scroll-hint">Таблица шире экрана. Листайте вбок, чтобы увидеть обе метрики; с клавиатуры — Tab и стрелки.</p>
+      <div class="table-scroll" tabindex="0" aria-label="Таблица результатов, прокрутка по горизонтали"><table class="scores"><thead><tr><th>Стратегия</th><th>MSE структуры</th><th>MSE каркасы</th><th>MAE структуры</th><th>MAE каркасы</th></tr></thead><tbody id="score-rows"></tbody></table></div>
+      <p id="score-note" class="field-help">По структурам — среднее трёх разбиений. Каркасная проверка откладывает семейства молекул. Строки «отдельно» — диагностические эксперименты, не независимые победители.</p>
+      <section id="reliability-section" class="quality-section" hidden><h2>Насколько устойчиво изменение MSE</h2><p id="reliability-caption"></p><p class="scroll-hint">Листайте таблицу вбок, чтобы увидеть границы интервала.</p><div class="table-scroll" tabindex="0" aria-label="Интервалы изменения MSE"><table class="scores"><thead><tr><th>Разбиения / группы</th><th>Снижение MSE</th><th>Интервал 95%</th><th>Ноль внутри</th></tr></thead><tbody id="reliability-rows"></tbody></table></div><p id="reliability-note" class="field-help"></p><a href="/download/reliability.csv" download>Все интервалы MSE и MAE</a></section>
+      <details id="ranges-section" class="quality-section" hidden><summary>Ошибки по диапазонам SI</summary><p class="field-help">Прежние разбиения. Сравнение новой процедуры с предыдущей выпущенной версией; среднее по seed. N — число исходных наблюдений.</p><div class="table-scroll" tabindex="0" aria-label="Ошибки по диапазонам SI"><table class="scores"><thead><tr><th>Группы / SI</th><th>N</th><th>MSE v3</th><th>MSE v4</th><th>MAE v3</th><th>MAE v4</th></tr></thead><tbody id="range-rows"></tbody></table></div><a href="/download/range_comparison.csv" download>Скачать все срезы</a></details>
+      <section id="medical-section" class="quality-section" hidden><h2>Очередь медицинской проверки</h2><p id="medical-summary"></p><p class="field-help">Проверка ещё не проведена. Исходные метки сохранены; решения и ссылки на первичные источники заполняет проверяющий.</p><a href="/download/medical_review_queue.csv" download>Скачать очередь с вопросами</a></section>
+      <div class="findings"><section><h2>Одна большая ошибка</h2><p id="extreme-description"></p><a href="/download/error_review.csv" download>Таблица ошибок</a></section><section><h2>Различающиеся метки</h2><p id="duplicates-description"></p><a href="/download/duplicate_review.csv" download>Разбор дубликатов</a></section></div>
+      <figure class="chart"><p class="scroll-hint">Два графика рядом. Листайте вбок или откройте изображение целиком.</p><div class="chart-scroll" tabindex="0" role="region" aria-label="Графики прогнозов, прокрутка по горизонтали"><img src="/charts/oof_scatter.svg" alt="Отложенные прогнозы против истинного SI в исходной и симметричной логарифмической шкалах" loading="lazy"></div><figcaption>Отложенные прогнозы процедуры подбора на первом разбиении. Охра обозначает метки 10000. <a href="/charts/oof_scatter.svg" target="_blank" rel="noopener">Открыть графики целиком</a></figcaption></figure>
+      <figure class="chart"><p class="scroll-hint">Два графика рядом. Листайте вбок или откройте изображение целиком.</p><div class="chart-scroll" tabindex="0" role="region" aria-label="Графики ошибок, прокрутка по горизонтали"><img src="/charts/error_diagnostics.svg" alt="Ошибка в зависимости от сходства с обучением и десять наибольших вкладов в квадратичную ошибку" loading="lazy"></div><figcaption>Сходство рассчитано только с обучающей частью соответствующего фолда. Оно не является оценкой уверенности. <a href="/charts/error_diagnostics.svg" target="_blank" rel="noopener">Открыть графики целиком</a></figcaption></figure>
+      <div class="quality-footer"><p id="validation-note"></p><a href="/download/submission.csv" download class="primary download">Скачать submission.csv</a></div>
+    </section>
+  </main>
+  <footer><span>VACV SI · исследовательский прототип</span><span>Набор организаторов. Без внешних дополнений.</span></footer>
+</body>
+</html>

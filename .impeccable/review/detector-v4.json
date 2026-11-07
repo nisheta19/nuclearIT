@@ -1,0 +1,94 @@
+[
+  {
+    "antipattern": "broken-image",
+    "name": "Broken or placeholder image",
+    "description": "<img> tags with empty src, missing src, or placeholder values ship as broken-image boxes. Use real images, generated assets, or remove the tag.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "C:\\ostrovok\\nuclearIT\\web\\index.html",
+    "line": 0,
+    "snippet": "<img> with no src attribute"
+  },
+  {
+    "antipattern": "cream-palette",
+    "name": "Cream / beige palette",
+    "description": "A warm cream or beige page background has become the default \"tasteful\" AI surface, reached for by reflex. Choose a background that comes from a deliberate palette, not the safe warm off-white.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "C:\\ostrovok\\nuclearIT\\web\\index.html",
+    "line": 0,
+    "snippet": "cream/beige page background rgb(245, 245, 239)"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\ostrovok\\nuclearIT\\web\\app.css",
+    "line": 5,
+    "snippet": "font-size: 19px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "19px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\ostrovok\\nuclearIT\\web\\app.css",
+    "line": 5,
+    "snippet": "font-size: 31px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "31px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\ostrovok\\nuclearIT\\web\\app.css",
+    "line": 5,
+    "snippet": "font-size: 16px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "16px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\ostrovok\\nuclearIT\\web\\app.css",
+    "line": 5,
+    "snippet": "font-size: 17px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "17px"
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\ostrovok\\nuclearIT\\web\\app.css",
+    "line": 7,
+    "snippet": "Undocumented color #789785 is outside DESIGN.md colors",
+    "advisory": true,
+    "ignoreValue": "#789785"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "C:\\ostrovok\\nuclearIT\\web\\app.css",
+    "line": 10,
+    "snippet": "font-size: 16px is off the DESIGN.md type ramp",
+    "advisory": true,
+    "ignoreValue": "16px"
+  }
+]

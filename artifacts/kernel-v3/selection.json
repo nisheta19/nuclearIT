@@ -1,0 +1,65 @@
+{
+  "strategy": "robust_search",
+  "promoted": true,
+  "final_model": "r2_binary:kernel:1:w1",
+  "fingerprint": {
+    "name": "r2_binary",
+    "radius": 2,
+    "bits": 2048,
+    "kind": "binary",
+    "include_chirality": true,
+    "atom_invariants": "connectivity",
+    "descriptors": []
+  },
+  "candidate_from_full_train_cv": {
+    "id": "r2_binary:kernel:1:w1",
+    "feature_set": "r2_binary",
+    "family": "kernel",
+    "alpha": 1.0,
+    "kernel_weight": 1.0,
+    "linear_alpha": 10.0
+  },
+  "promotion_checks": [
+    {
+      "phase": "historical",
+      "scheme": "structure",
+      "baseline_mse": 15979326.866942538,
+      "candidate_mse": 15578163.577337978,
+      "improvement_percent": 2.5105143223177473,
+      "passed": true
+    },
+    {
+      "phase": "historical",
+      "scheme": "scaffold",
+      "baseline_mse": 20267043.82346254,
+      "candidate_mse": 19638230.02338382,
+      "improvement_percent": 3.1026419321734555,
+      "passed": true
+    },
+    {
+      "phase": "additional",
+      "scheme": "structure",
+      "baseline_mse": 15972281.66450783,
+      "candidate_mse": 15449521.508522019,
+      "improvement_percent": 3.2729209700041895,
+      "passed": true
+    },
+    {
+      "phase": "additional",
+      "scheme": "scaffold",
+      "baseline_mse": 18819156.06873831,
+      "candidate_mse": 17924489.79288443,
+      "improvement_percent": 4.754019110028351,
+      "passed": true
+    }
+  ],
+  "rule": "Strictly lower structure and scaffold MSE than frozen baseline on historical splits AND on additional predeclared splits; no candidate selection from outer ablations.",
+  "external_data_used": false,
+  "caveat": "Adaptive development on one dataset; extra splits are stability checks, not independent test data. Outer results used for promotion, not inner candidate tuning.",
+  "model_labels": {
+    "baseline_ridge": "Исходный Ridge",
+    "robust_search": "Подбор по двум видам групп",
+    "mean": "Среднее train"
+  },
+  "comparison_candidate": "robust_search"
+}

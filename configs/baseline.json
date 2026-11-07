@@ -1,0 +1,21 @@
+{
+  "dataset_version": "hakathonMiphi-original-user-authorized-2026-11-07",
+  "train": "data/raw/competition/train.csv",
+  "test": "data/raw/competition/test.csv",
+  "sample": "data/raw/competition/sample_submit.csv",
+  "input_sha256": {
+    "train": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+    "test": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+    "sample": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c"
+  },
+  "expected": {"train_rows": 320, "test_rows": 597, "zero_targets": 2, "targets_10000": 81},
+  "fingerprint": {"radius": 2, "bits": 2048, "include_chirality": true},
+  "folds": 5,
+  "structure_seeds": [42, 137, 2026],
+  "model_seed": 42,
+  "ridge_alpha": 10.0,
+  "extra_trees": {"n_estimators": 400, "min_samples_leaf": 2, "max_features": 1.0, "n_jobs": -1},
+  "candidates": ["mean", "ridge_si", "ridge_log1p", "extra_trees_si", "extra_trees_log1p"],
+  "clip_min": 0.0,
+  "external_data": false
+}

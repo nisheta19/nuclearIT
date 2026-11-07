@@ -1,0 +1,18 @@
+{
+  "rows": 89,
+  "priority_counts": {
+    "P2": 80,
+    "P1": 9
+  },
+  "reason_counts": {
+    "extreme_si": 1,
+    "si_10000": 81,
+    "zero_si": 2,
+    "conflicting_structure": 6
+  },
+  "train_sha256": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+  "source_run": "artifacts\\kernel-v3",
+  "status": "pending",
+  "label_changes": 0,
+  "note": "Очередь вопросов, не медицинское заключение. Поля решения пусты. Исправления не применяются автоматически; внешние данные не добавлены."
+}

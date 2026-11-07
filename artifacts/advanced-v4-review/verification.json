@@ -1,0 +1,22 @@
+{
+  "run": "C:\\ostrovok\\nuclearIT\\artifacts\\advanced-v4",
+  "artifacts_checked": 62,
+  "outer_folds": 45,
+  "identical_structures_grouped": true,
+  "inner_folds_exclude_outer_validation": true,
+  "reference_oof_unchanged_within_csv_precision": true,
+  "labels_unchanged": true,
+  "input_hashes_unchanged": true,
+  "mse_mae_recomputed": true,
+  "bootstrap_reproduced": true,
+  "promotion_recomputed": true,
+  "submission_byte_identical_after_reload": true,
+  "medical_queue_rows": 89,
+  "medical_conclusions_pending": true,
+  "submission": {
+    "valid_format": true,
+    "rows": 597,
+    "sha256": "2c23e99e2c8c97a846b918757a9ebfb9f8f444b4f279a66a4e82d9cf49eaf95b",
+    "quality_verified": false
+  }
+}
