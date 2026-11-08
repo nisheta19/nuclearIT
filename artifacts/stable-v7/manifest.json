@@ -1,0 +1,123 @@
+{
+  "dataset_version": "hakathonMiphi-original-user-authorized-2026-11-07",
+  "observed": {
+    "train_rows": 320,
+    "test_rows": 597,
+    "zero_targets": 2,
+    "targets_10000": 81
+  },
+  "inputs": {
+    "train": {
+      "path": "C:\\ostrovok\\nuclearIT\\data\\raw\\competition\\train.csv",
+      "sha256": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+      "bytes": 45041,
+      "columns": [
+        "Title",
+        "CC50_uM",
+        "IC50_uM_VACV",
+        "SI VACV",
+        "SMILES",
+        "strain",
+        "Culture"
+      ]
+    },
+    "test": {
+      "path": "C:\\ostrovok\\nuclearIT\\data\\raw\\competition\\test.csv",
+      "sha256": "1b0c6a014bbe556c42ef2277e867d2e1a647ad31c157a9cd81bbc7e262481abd",
+      "bytes": 83025,
+      "columns": [
+        "index",
+        "Title",
+        "CC50_uM",
+        "IC50_uM_VACV",
+        "SMILES",
+        "strain",
+        "Culture"
+      ]
+    },
+    "sample": {
+      "path": "C:\\ostrovok\\nuclearIT\\data\\raw\\competition\\sample_submit.csv",
+      "sha256": "3eea4d23f5700361c09da24cd45be05c5dbbecf76cc29b022c3676835606884c",
+      "bytes": 13725,
+      "columns": [
+        "index",
+        "SI VACV"
+      ]
+    }
+  },
+  "features_from": [
+    "SMILES"
+  ],
+  "external_data_used": false,
+  "sample_values_used": false,
+  "target_changes": 0,
+  "target_review": {
+    "status": "unresolved_target_semantics",
+    "train_sha256": "239efa4b3aa667b3681f6e1062d86ca5b0ba441364b8f2b894b4c428e272ba81",
+    "dataset_version": "hakathonMiphi-original-user-authorized-2026-11-07",
+    "training_dataset_version": "hakathonMiphi-original-user-authorized-2026-11-07",
+    "external_data_used": false,
+    "external_training_rows": 0,
+    "external_train_sha256": null,
+    "disputed_rows": 81,
+    "organizer_resolution": "pending",
+    "message": "В организаторском train 81 из 320 меток SI = 10000 имеют неопределённый смысл. Эти значения уже есть в исходном архиве; все 81 строки имеют пустой IC50. В полученной версии с теми же SMILES эти 81 метка заменены нулями. Прогнозы и MSE относятся только к сохранённой версии меток; нужен ответ организаторов.",
+    "comparison_note": "MSE разных версий меток нельзя напрямую сравнивать как улучшение модели.",
+    "report_url": "/download/target_version_investigation.md"
+  },
+  "environment": {
+    "python": "3.12.0",
+    "packages": {
+      "numpy": "2.2.6",
+      "pandas": "2.2.3",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.6.1",
+      "rdkit": "2025.3.3",
+      "joblib": "1.5.1"
+    }
+  },
+  "structure_policy": {
+    "canonical": "RDKit canonical isomeric SMILES; atom map numbers removed",
+    "preserved": [
+      "stereochemistry",
+      "isotopes",
+      "charges",
+      "all fragments",
+      "tautomer form"
+    ],
+    "salt_stripping": false,
+    "neutralization": false,
+    "tautomer_normalization": false,
+    "scaffold": "Bemis-Murcko without chirality; all acyclic molecules share ACYCLIC group",
+    "invalid_train": "fail with audit; no silent exclusions",
+    "invalid_test": "mean of training labels, with explicit fallback flag"
+  },
+  "code_sha256": {
+    "vacv\\__init__.py": "5d2ad9fffd7af28cc37f78ad358c6a3f6848a0d57db402be00ba4da7c8f57b25",
+    "vacv\\__main__.py": "5398624118ae36972c05356e6932311b593034f527a9698c534674a7582a0380",
+    "vacv\\advanced.py": "c5f0eb7e286eb3199773354bc37f25c06b7c369a77be282c2b82bb3a177bf2e9",
+    "vacv\\advanced_experiment.py": "eb9cb9adea0f8c2d76286cddfdc6950a23532ef2b3a3af2e3944b33f5d4ea305",
+    "vacv\\augmentation.py": "ebf261a56372212a781732d1eef4883f42b748d497a90cbf8ac07e2c0b3204cf",
+    "vacv\\augmented_experiment.py": "7059721f831f6e86c1b2251712535df86ff0114f3b196071536e37ee4ea8f671",
+    "vacv\\batch.py": "5df2e7322755edd3fc97d67bf3ed986d8c7e80737dfba74d9ea899c1aafe0eb3",
+    "vacv\\chemistry.py": "e7bab172f4da704986bd9039dcfcd57eed026dd7ed1c0c1684ffb7844c59dc92",
+    "vacv\\data.py": "5a48192d03d86c160e21cd07ea95883ac971a012031945658a71e3dfd7a306ba",
+    "vacv\\diagnostics.py": "044eed50d9b4a6b05ebd4769663377f7b65b91032924e2c4596310f004bade9e",
+    "vacv\\experiment.py": "52b92ff7985a8335863baf7f918b2d46087dac5bc43f4951c85bf12762fb3f3c",
+    "vacv\\kernel.py": "d22605c30a3dbbcbb47c3565332dbfa40961357fb9b8588d15ad763e80eb3e80",
+    "vacv\\medical_review.py": "e89b4babf809feed04baddbcf057d45b77ce6ecbeae26d69bc56bd262d27a2c0",
+    "vacv\\models.py": "4a2d5eefe131186b320521de0300fdec9042bb03edde970f46b8f72c16551962",
+    "vacv\\nonlinear.py": "4919af9ff14a4ddbb8f45159004a10030c1ff3501d92d8b26b6850d9cbbcfacc",
+    "vacv\\pipeline.py": "2651c8ad41012350fceadbc43977472cc8c573c0ce0e8e5bbfdfe64e6b22b5a7",
+    "vacv\\reliability.py": "a6c63d496fbbb69838cacaeee94c126454996611ce91411e54bf1583dbe7bf72",
+    "vacv\\robust_experiment.py": "4a94d301e38b4a371cb55bbd85462a2fce0841140d20c227f983aed65504e9f7",
+    "vacv\\robust_search.py": "e60db1c35828bc5b0c44d803cc5de890aeeaad2e0c7f1e9150249ccd1ee432fb",
+    "vacv\\search.py": "c857e61b8baad02ded9ff543ff4d19a2759f4c93799490a23919f1bf77415986",
+    "vacv\\server.py": "cd92731b2e5aac85b0998164d541148c47eb2697af22883554710adfdc8a890e",
+    "vacv\\similarity_experiment.py": "fb271442ffaa88786f0ccc44c99f0cc11462eb4cf060c75cd8daed54de54d4e8",
+    "vacv\\similarity_search.py": "7e0fcb76fe696a4d207c14d3a98d5a426f5d35a184479e8303a301396604271d",
+    "vacv\\stable.py": "49d1a626992561445ea8e247692a344e9d6541eb80852b664f9f71351d8a30fa",
+    "vacv\\target_status.py": "6d467a62ba616d7e7bfb5a7d8fcf187c368c62c9530bc2b226eb511db96dc2f3",
+    "vacv\\validation.py": "4d4fc4ce7a3aa44e9eb9324e4ceaa3e68973bfec971b154988b9ce625e87cf85"
+  }
+}

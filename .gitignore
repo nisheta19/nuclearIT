@@ -13,6 +13,12 @@ artifacts/*
 !artifacts/advanced-v4-review/
 !artifacts/augmented-v5/
 !artifacts/augmented-v5-review/
+!artifacts/similarity-v6/
+!artifacts/similarity-v6-review/
+!artifacts/stable-v7/
+!artifacts/stable-v7-review/
+!artifacts/stable-v8/
+!artifacts/stable-v8-review/
 !artifacts/medical-review-v4/
 !artifacts/browser_verification.json
 data/raw/*

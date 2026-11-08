@@ -11,21 +11,22 @@ import numpy as np
 import pandas as pd
 
 
-def post(path,value):
-    request=Request('http://127.0.0.1:8765'+path,data=json.dumps(value).encode(),headers={'Content-Type':'application/json'})
+def post(path,value,base_url='http://127.0.0.1:8765'):
+    request=Request(base_url.rstrip('/')+path,data=json.dumps(value).encode(),headers={'Content-Type':'application/json'})
     with urlopen(request,timeout=120) as response:
         return json.load(response)
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
-    parser.add_argument('--report',type=Path,default=Path('artifacts/advanced-v4-review/batch_api_verification.json'))
-    parser.add_argument('--run',type=Path,default=Path('artifacts/augmented-v5'))
+    parser.add_argument('--report',type=Path,default=Path('artifacts/stable-v8-review/batch_api_verification.json'))
+    parser.add_argument('--run',type=Path,default=Path('artifacts/stable-v8'))
+    parser.add_argument('--url',default='http://127.0.0.1:8765')
     args=parser.parse_args()
     started=time.monotonic()
     run=args.run
     original=Path('data/raw/competition/test.csv').read_text(encoding='utf-8-sig')
-    result=post('/api/batch',{'csv':original})
+    result=post('/api/batch',{'csv':original},args.url)
     expected=pd.read_csv(run/'submission.csv',dtype={'index':str})
     assert result['total']==result['valid']==len(expected) and result['invalid']==0
     assert [row['index'] for row in result['rows']]==expected['index'].tolist()
@@ -39,10 +40,10 @@ if __name__=='__main__':
     assert result['target_review']['external_data_used']==expected_external
     assert {row['external_data_used'] for row in exported}=={str(expected_external)}
     np.testing.assert_allclose([float(row['predicted_si']) for row in exported],expected['SI VACV'],rtol=1e-12,atol=1e-9)
-    single=post('/api/predict',{'smiles':result['rows'][0]['SMILES']})
+    single=post('/api/predict',{'smiles':result['rows'][0]['SMILES']},args.url)
     np.testing.assert_allclose(single['predicted_si'],result['rows'][0]['predicted_si'],rtol=1e-12,atol=1e-9)
     assert single['target_review']==result['target_review']
-    maximum=post('/api/batch',{'csv':'index,SMILES\n'+'\n'.join(f'{i:04d},CCO' for i in range(2000))+'\n'})
+    maximum=post('/api/batch',{'csv':'index,SMILES\n'+'\n'.join(f'{i:04d},CCO' for i in range(2000))+'\n'},args.url)
     assert maximum['total']==maximum['valid']==2000 and maximum['invalid']==0
     np.testing.assert_allclose([row['predicted_si'] for row in maximum['rows']],maximum['rows'][0]['predicted_si'],rtol=1e-12)
     assert maximum['rows'][-1]['index']=='1999'

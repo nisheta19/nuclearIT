@@ -1,0 +1,6 @@
+{
+  "run": "artifacts\\similarity-v6",
+  "artifact_hashes_sha256": "f6cc35cfb4370e5a4d04dbba337911fc4f39ab1f2a8ca5d1a8293985b3868afb",
+  "used_model": "incumbent_v4",
+  "candidate_model_used": false
+}

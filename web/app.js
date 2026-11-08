@@ -1,5 +1,6 @@
 const $ = id => document.getElementById(id);
 const number = (value, digits = 0) => new Intl.NumberFormat('ru-RU', {maximumFractionDigits: digits}).format(value);
+const phaseName = phase => ({historical:'прежние',additional:'дополнительные',fresh:'новые'}[phase] || phase);
 let summary = null;
 let example = 0;
 let controller = null;
@@ -62,7 +63,7 @@ async function initialize() {
       }
     }
     if (checks.length) {
-      decision += ` Сравнение с «${referenceLabel}»: ` + checks.map(c => `${c.phase === 'historical' ? 'прежние' : 'дополнительные'} разбиения, ${c.scheme === 'structure' ? 'структуры' : 'каркасы'}: ${c.improvement_percent >= 0 ? 'снижение' : 'рост'} MSE ${number(Math.abs(c.improvement_percent),2)}%`).join('; ') + '.';
+      decision += ` Сравнение с «${referenceLabel}»: ` + checks.map(c => `${phaseName(c.phase)} разбиения, ${c.scheme === 'structure' ? 'структуры' : 'каркасы'}: ${c.improvement_percent >= 0 ? 'снижение' : 'рост'} MSE ${number(Math.abs(c.improvement_percent),2)}%`).join('; ') + '.';
     } else if (tuned && baseline) {
       decision += ` MSE подбора по структурам: ${number(tuned.structure_mse_mean)}, по каркасам: ${number(tuned.scaffold_mse)}; исходный Ridge по каркасам: ${number(baseline.scaffold_mse)}.`;
     }
@@ -78,12 +79,12 @@ async function initialize() {
       $('reliability-section').hidden = false;
       $('reliability-caption').textContent = `Новая процедура против «${referenceLabel}». Положительная разница означает снижение ошибки; если интервал включает ноль, преимущество этими данными не установлено.`;
       const selected = summary.reliability.rows.filter(r => r.candidate === candidateId && r.metric === 'mse');
-      for (const r of selected) $('reliability-rows').append(row([`${r.phase === 'historical' ? 'Прежние' : 'Дополнительные'} / ${r.scheme === 'structure' ? 'структуры' : 'каркасы'}`,number(r.improvement),`${number(r.ci_low)} … ${number(r.ci_high)}`,r.ci_low <= 0 && r.ci_high >= 0 ? 'Да' : 'Нет']));
+      for (const r of selected) $('reliability-rows').append(row([`${phaseName(r.phase)} / ${r.scheme === 'structure' ? 'структуры' : 'каркасы'}`,number(r.improvement),`${number(r.ci_low)} … ${number(r.ci_high)}`,r.ci_low <= 0 && r.ci_high >= 0 ? 'Да' : 'Нет']));
       $('reliability-note').textContent = summary.reliability.note;
     }
     if (summary.range_comparison?.length) {
-      const beforeVersion = summary.augmentation ? 'v4' : 'v3';
-      const afterVersion = summary.augmentation ? 'v5' : 'v4';
+      const beforeVersion = summary.reference_strategy?.match(/v\d+$/)?.[0] || 'базовая';
+      const afterVersion = summary.run_name?.match(/v\d+$/)?.[0] || 'новая';
       for (const metric of ['mse','mae']) {
         $('range-'+metric+'-before').textContent = metric.toUpperCase()+' '+beforeVersion;
         $('range-'+metric+'-after').textContent = metric.toUpperCase()+' '+afterVersion;

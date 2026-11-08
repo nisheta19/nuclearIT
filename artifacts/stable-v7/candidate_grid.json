@@ -1,0 +1,62 @@
+[
+  {
+    "id": "stage_ensemble:C0.03:w0.5-0.5-0",
+    "C": 0.03,
+    "weights": [
+      0.5,
+      0.5,
+      0
+    ],
+    "alpha": 1.0
+  },
+  {
+    "id": "stage_ensemble:C0.03:w0.4-0.4-0.2",
+    "C": 0.03,
+    "weights": [
+      0.4,
+      0.4,
+      0.2
+    ],
+    "alpha": 1.0
+  },
+  {
+    "id": "stage_ensemble:C0.1:w0.5-0.5-0",
+    "C": 0.1,
+    "weights": [
+      0.5,
+      0.5,
+      0
+    ],
+    "alpha": 1.0
+  },
+  {
+    "id": "stage_ensemble:C0.1:w0.4-0.4-0.2",
+    "C": 0.1,
+    "weights": [
+      0.4,
+      0.4,
+      0.2
+    ],
+    "alpha": 1.0
+  },
+  {
+    "id": "stage_ensemble:C0.3:w0.5-0.5-0",
+    "C": 0.3,
+    "weights": [
+      0.5,
+      0.5,
+      0
+    ],
+    "alpha": 1.0
+  },
+  {
+    "id": "stage_ensemble:C0.3:w0.4-0.4-0.2",
+    "C": 0.3,
+    "weights": [
+      0.4,
+      0.4,
+      0.2
+    ],
+    "alpha": 1.0
+  }
+]

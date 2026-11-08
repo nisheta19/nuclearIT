@@ -59,3 +59,14 @@ def test_http_batch_route_and_origin_guard(local_server):
     with pytest.raises(HTTPError) as error:
         urlopen(request,timeout=3)
     assert error.value.code==403
+
+
+def test_rejected_post_body_keeps_http_error_readable(local_server):
+    # Repeat on one server to exercise the request-body/close race on Windows.
+    for i in range(30):
+        headers={"Content-Type":"application/json","Host":"unrelated.example"}
+        payload=b'{"smiles":"'+b'C'*(2+i*512)+b'"}'
+        with pytest.raises(HTTPError) as error:
+            urlopen(Request(local_server+'/api/predict',data=payload,headers=headers),timeout=3)
+        assert error.value.code==403
+        assert json.load(error.value)['error']=='Local access only'

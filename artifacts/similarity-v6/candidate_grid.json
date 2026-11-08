@@ -1,0 +1,1262 @@
+[
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_binary:direct:p1:a0.1:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_binary:direct:p1:a1:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r2_binary:direct:p1:a10:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_binary:logistic:p1:a1:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r2_binary:logistic:p1:a1:C10"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r2_binary:logistic:p1:a1:C100"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_binary:direct:p2:a0.1:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_binary:direct:p2:a1:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r2_binary:direct:p2:a10:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_binary:logistic:p2:a1:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r2_binary:logistic:p2:a1:C10"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r2_binary:logistic:p2:a1:C100"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_binary:ridge:p1:a0.1:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.01,
+    "id": "r2_binary:linear:p1:a0.1:C0.01"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.1,
+    "id": "r2_binary:linear:p1:a0.1:C0.1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_binary:linear:p1:a0.1:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_binary:ridge:p1:a1:C1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.01,
+    "id": "r2_binary:linear:p1:a1:C0.01"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.1,
+    "id": "r2_binary:linear:p1:a1:C0.1"
+  },
+  {
+    "representation": 0,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_binary:linear:p1:a1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r3_binary:direct:p1:a0.1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_binary:direct:p1:a1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r3_binary:direct:p1:a10:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_binary:logistic:p1:a1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r3_binary:logistic:p1:a1:C10"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r3_binary:logistic:p1:a1:C100"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r3_binary:direct:p2:a0.1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_binary:direct:p2:a1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r3_binary:direct:p2:a10:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_binary:logistic:p2:a1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r3_binary:logistic:p2:a1:C10"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r3_binary:logistic:p2:a1:C100"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r3_binary:ridge:p1:a0.1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.01,
+    "id": "r3_binary:linear:p1:a0.1:C0.01"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.1,
+    "id": "r3_binary:linear:p1:a0.1:C0.1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r3_binary:linear:p1:a0.1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_binary:ridge:p1:a1:C1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.01,
+    "id": "r3_binary:linear:p1:a1:C0.01"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.1,
+    "id": "r3_binary:linear:p1:a1:C0.1"
+  },
+  {
+    "representation": 1,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_binary:linear:p1:a1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_features:direct:p1:a0.1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_features:direct:p1:a1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r2_features:direct:p1:a10:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_features:logistic:p1:a1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r2_features:logistic:p1:a1:C10"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r2_features:logistic:p1:a1:C100"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_features:direct:p2:a0.1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_features:direct:p2:a1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r2_features:direct:p2:a10:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_features:logistic:p2:a1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r2_features:logistic:p2:a1:C10"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r2_features:logistic:p2:a1:C100"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_features:ridge:p1:a0.1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.01,
+    "id": "r2_features:linear:p1:a0.1:C0.01"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.1,
+    "id": "r2_features:linear:p1:a0.1:C0.1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_features:linear:p1:a0.1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_features:ridge:p1:a1:C1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.01,
+    "id": "r2_features:linear:p1:a1:C0.01"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.1,
+    "id": "r2_features:linear:p1:a1:C0.1"
+  },
+  {
+    "representation": 2,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_features:linear:p1:a1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r1_binary:direct:p1:a0.1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r1_binary:direct:p1:a1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r1_binary:direct:p1:a10:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r1_binary:logistic:p1:a1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r1_binary:logistic:p1:a1:C10"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r1_binary:logistic:p1:a1:C100"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r1_binary:direct:p2:a0.1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r1_binary:direct:p2:a1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r1_binary:direct:p2:a10:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r1_binary:logistic:p2:a1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r1_binary:logistic:p2:a1:C10"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r1_binary:logistic:p2:a1:C100"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r1_binary:ridge:p1:a0.1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.01,
+    "id": "r1_binary:linear:p1:a0.1:C0.01"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.1,
+    "id": "r1_binary:linear:p1:a0.1:C0.1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r1_binary:linear:p1:a0.1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r1_binary:ridge:p1:a1:C1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.01,
+    "id": "r1_binary:linear:p1:a1:C0.01"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.1,
+    "id": "r1_binary:linear:p1:a1:C0.1"
+  },
+  {
+    "representation": 3,
+    "transform": "identity",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r1_binary:linear:p1:a1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_count:direct:p1:a0.1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_count:direct:p1:a1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r2_count:direct:p1:a10:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_count:logistic:p1:a1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r2_count:logistic:p1:a1:C10"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r2_count:logistic:p1:a1:C100"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_count:direct:p2:a0.1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_count:direct:p2:a1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r2_count:direct:p2:a10:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_count:logistic:p2:a1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r2_count:logistic:p2:a1:C10"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r2_count:logistic:p2:a1:C100"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_count:ridge:p1:a0.1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.01,
+    "id": "r2_count:linear:p1:a0.1:C0.01"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.1,
+    "id": "r2_count:linear:p1:a0.1:C0.1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_count:linear:p1:a0.1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_count:ridge:p1:a1:C1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.01,
+    "id": "r2_count:linear:p1:a1:C0.01"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.1,
+    "id": "r2_count:linear:p1:a1:C0.1"
+  },
+  {
+    "representation": 4,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_count:linear:p1:a1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r3_count:direct:p1:a0.1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_count:direct:p1:a1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r3_count:direct:p1:a10:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_count:logistic:p1:a1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r3_count:logistic:p1:a1:C10"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r3_count:logistic:p1:a1:C100"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r3_count:direct:p2:a0.1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_count:direct:p2:a1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r3_count:direct:p2:a10:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_count:logistic:p2:a1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r3_count:logistic:p2:a1:C10"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r3_count:logistic:p2:a1:C100"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r3_count:ridge:p1:a0.1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.01,
+    "id": "r3_count:linear:p1:a0.1:C0.01"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.1,
+    "id": "r3_count:linear:p1:a0.1:C0.1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r3_count:linear:p1:a0.1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_count:ridge:p1:a1:C1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.01,
+    "id": "r3_count:linear:p1:a1:C0.01"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.1,
+    "id": "r3_count:linear:p1:a1:C0.1"
+  },
+  {
+    "representation": 5,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r3_count:linear:p1:a1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_feature_count:direct:p1:a0.1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_feature_count:direct:p1:a1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 1,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r2_feature_count:direct:p1:a10:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_feature_count:logistic:p1:a1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r2_feature_count:logistic:p1:a1:C10"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r2_feature_count:logistic:p1:a1:C100"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_feature_count:direct:p2:a0.1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_feature_count:direct:p2:a1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "direct",
+    "power": 2,
+    "alpha": 10.0,
+    "C": 1.0,
+    "id": "r2_feature_count:direct:p2:a10:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_feature_count:logistic:p2:a1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 10.0,
+    "id": "r2_feature_count:logistic:p2:a1:C10"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "logistic",
+    "power": 2,
+    "alpha": 1.0,
+    "C": 100.0,
+    "id": "r2_feature_count:logistic:p2:a1:C100"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_feature_count:ridge:p1:a0.1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.01,
+    "id": "r2_feature_count:linear:p1:a0.1:C0.01"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 0.1,
+    "id": "r2_feature_count:linear:p1:a0.1:C0.1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 0.1,
+    "C": 1.0,
+    "id": "r2_feature_count:linear:p1:a0.1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "ridge",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_feature_count:ridge:p1:a1:C1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.01,
+    "id": "r2_feature_count:linear:p1:a1:C0.01"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 0.1,
+    "id": "r2_feature_count:linear:p1:a1:C0.1"
+  },
+  {
+    "representation": 6,
+    "transform": "log1p",
+    "gate": "linear",
+    "power": 1,
+    "alpha": 1.0,
+    "C": 1.0,
+    "id": "r2_feature_count:linear:p1:a1:C1"
+  }
+]

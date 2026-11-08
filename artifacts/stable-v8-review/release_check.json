@@ -1,0 +1,10 @@
+{
+  "selected_release": "stable-v8",
+  "rows": 597,
+  "submission_sha256": "827916dabf56f2924fe98a09577d9456a35c70410e44d8fcfb9c0138401db677",
+  "previous_submission_sha256": "2c23e99e2c8c97a846b918757a9ebfb9f8f444b4f279a66a4e82d9cf49eaf95b",
+  "predictions_changed": 597,
+  "unit_tests": 83,
+  "all_six_promotion_checks_pass": true,
+  "kaggle_submitted": false
+}

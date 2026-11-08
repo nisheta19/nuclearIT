@@ -9,9 +9,9 @@ from .pipeline import predict, run
 def main():
     parser = argparse.ArgumentParser(description="VACV SI: organizer-only, SMILES-only regression")
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ("audit", "train", "tune", "improve", "advance", "augment"):
+    for name in ("audit", "train", "tune", "improve", "advance", "augment", "similarity"):
         command = commands.add_parser(name)
-        default_config = {"tune": "configs/nested.json", "improve": "configs/kernel.json", "advance":"configs/advanced.json", "augment":"configs/augmented.json"}.get(name, "configs/baseline.json")
+        default_config = {"tune": "configs/nested.json", "improve": "configs/kernel.json", "advance":"configs/advanced.json", "augment":"configs/augmented.json", "similarity":"configs/similarity.json"}.get(name, "configs/baseline.json")
         command.add_argument("--config", default=default_config)
         command.add_argument("--output", required=True, help="New directory; existing runs are not overwritten")
     command = commands.add_parser("predict")
@@ -29,7 +29,10 @@ def main():
         review = target_status({'dataset_version':organizer['dataset_version'],
                                 'inputs':{'train':{'sha256':organizer.get('input_sha256',{}).get('train')}}})
         print('Статус меток: '+review['message'], file=sys.stderr)
-        if args.command == "augment":
+        if args.command == "similarity":
+            from .similarity_experiment import similarity_run
+            result = similarity_run(config,args.output)
+        elif args.command == "augment":
             from .augmented_experiment import augmented_run
             result = augmented_run(config,args.output)
         elif args.command == "advance":

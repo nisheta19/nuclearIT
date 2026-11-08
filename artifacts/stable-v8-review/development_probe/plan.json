@@ -1,0 +1,18 @@
+{
+  "fixed_C": 0.1,
+  "alpha": 1,
+  "radii": [
+    2,
+    3
+  ],
+  "bits": [
+    2048,
+    8192
+  ],
+  "classifier_min_counts": [
+    1,
+    3,
+    5
+  ],
+  "primary": "Increase fingerprint width to 8192 and average r2/r3, fixed parameters from the released v4 model. Filtered 2048 and fixed unfiltered average are diagnostic alternatives. All 45 folds are development data; no independent test claim."
+}

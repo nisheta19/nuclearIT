@@ -1,0 +1,107 @@
+{
+  "strategy": "incumbent_v4",
+  "promoted": false,
+  "final_model": "two_stage:r3_binary:a1:C0.1",
+  "fingerprint": {
+    "feature_sets": [
+      {
+        "name": "r2_binary",
+        "radius": 2,
+        "bits": 2048,
+        "kind": "binary",
+        "include_chirality": true,
+        "atom_invariants": "connectivity",
+        "descriptors": []
+      },
+      {
+        "name": "r3_binary",
+        "radius": 3,
+        "bits": 2048,
+        "kind": "binary",
+        "include_chirality": true,
+        "atom_invariants": "connectivity",
+        "descriptors": []
+      },
+      {
+        "name": "r2_features",
+        "radius": 2,
+        "bits": 2048,
+        "kind": "binary",
+        "include_chirality": true,
+        "atom_invariants": "features",
+        "descriptors": []
+      }
+    ]
+  },
+  "candidate_from_full_train_cv": {
+    "id": "stage_ensemble:C0.1:w0.5-0.5-0",
+    "C": 0.1,
+    "weights": [
+      0.5,
+      0.5,
+      0
+    ],
+    "alpha": 1.0
+  },
+  "promotion_checks": [
+    {
+      "phase": "historical",
+      "scheme": "structure",
+      "baseline_mse": 14816985.026827827,
+      "candidate_mse": 14425228.541160846,
+      "improvement_percent": 2.6439689650604503,
+      "passed": true
+    },
+    {
+      "phase": "historical",
+      "scheme": "scaffold",
+      "baseline_mse": 18713792.960573714,
+      "candidate_mse": 18630460.485677578,
+      "improvement_percent": 0.44529975869510574,
+      "passed": true
+    },
+    {
+      "phase": "additional",
+      "scheme": "structure",
+      "baseline_mse": 14421766.978341678,
+      "candidate_mse": 14193528.824528553,
+      "improvement_percent": 1.5825949355296687,
+      "passed": true
+    },
+    {
+      "phase": "additional",
+      "scheme": "scaffold",
+      "baseline_mse": 17010830.457494132,
+      "candidate_mse": 17152852.201977562,
+      "improvement_percent": -0.8348901297811739,
+      "passed": false
+    },
+    {
+      "phase": "fresh",
+      "scheme": "structure",
+      "baseline_mse": 13646313.013926502,
+      "candidate_mse": 13749434.832862392,
+      "improvement_percent": -0.7556753156010121,
+      "passed": false
+    },
+    {
+      "phase": "fresh",
+      "scheme": "scaffold",
+      "baseline_mse": 17113240.40394643,
+      "candidate_mse": 17256388.63873771,
+      "improvement_percent": -0.8364765024762244,
+      "passed": false
+    }
+  ],
+  "rule": "Strictly lower MSE than the v4 procedure in both schemes and both frozen cohorts, plus both fresh-seed schemes. Fresh seeds reuse the same molecules and are a robustness check, not an independent test. All tuning inside outer train; labels unchanged; no external rows.",
+  "comparison_candidate": "stable_search",
+  "reference_strategy": "incumbent_v4",
+  "reference_label": "Выпущенная v4/v5",
+  "model_labels": {
+    "incumbent_v4": "Выпущенная v4/v5",
+    "stable_search": "Усреднение двухэтапных моделей v7",
+    "baseline_ridge": "Исходный Ridge",
+    "mean": "Среднее train"
+  },
+  "external_data_used": false
+}

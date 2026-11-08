@@ -1,0 +1,10 @@
+{
+  "verified": true,
+  "frozen_artifacts": 74,
+  "outer_folds": 65,
+  "inner_group_isolation_checks": 390,
+  "original_labels_unchanged": true,
+  "selected_and_candidate_reload_match": true,
+  "promoted": true,
+  "submission_sha256": "827916dabf56f2924fe98a09577d9456a35c70410e44d8fcfb9c0138401db677"
+}

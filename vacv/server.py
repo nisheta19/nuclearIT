@@ -64,6 +64,10 @@ class Workbench:
             medical = None
         ranges = pd.read_csv(self.review_dir/'range_comparison.csv').to_dict(orient='records') if (self.review_dir/'range_comparison.csv').is_file() else []
         test = pd.read_csv(self.run_dir / "test_for_model.csv", dtype=str)
+        settings = self.bundle['config'].get('stable_search', {})
+        fixed_ensemble = len(settings.get('classifier_C', [])) == len(settings.get('weights', [])) == 1
+        validation_note = ("Групповая проверка фиксированного ансамбля. Вариант выбран на прежних разбиениях; новые seed используют те же молекулы. Это проверка устойчивости, не независимый тест."
+                           if fixed_ensemble else "Вложенная групповая валидация. Все разбиения используют один train; дополнительные разбиения проверяют устойчивость. Финального независимого теста нет.")
         return {"run_name": self.run_dir.name, "dataset_version": self.bundle["config"]["dataset_version"],
             "model_name": self.bundle["name"], "strategy": selection["strategy"], "promoted": selection["promoted"],
             "model_labels": selection.get("model_labels", {}), "comparison_candidate": selection.get("comparison_candidate", "tuned_ridge"),
@@ -75,7 +79,7 @@ class Workbench:
             "audit": audit, "leaderboard": table, "diagnostics": diagnostics,
             "examples": [{"label": f"Молекула test · {test.iloc[i]['index']}", "smiles": test.iloc[i].SMILES} for i in (0, min(10, len(test)-1))],
             "input_features": "Только SMILES", "external_data_used": bool(self.bundle['manifest'].get('external_data_used',False)),
-            "validation_note": "Вложенная групповая валидация. Все разбиения используют один train; дополнительные разбиения проверяют устойчивость. Финального независимого теста нет."}
+            "validation_note": validation_note}
 
     def predict(self, smiles):
         if not isinstance(smiles, str) or not smiles.strip() or len(smiles) > 2000:
@@ -129,6 +133,26 @@ def make_server(run_dir, port=8765):
         def valid_host(self):
             return self.headers.get("Host") in {f"127.0.0.1:{self.server.server_port}", f"localhost:{self.server.server_port}"}
 
+        def reject_post(self, message, status):
+            # Closing a Windows socket with an unread request body can discard
+            # the HTTP error response with a connection reset. Drain only a
+            # small, declared body with a deadline; never parse or process it.
+            try:
+                length = int(self.headers.get("Content-Length", "0"))
+            except ValueError:
+                length = 0
+            previous_timeout = self.connection.gettimeout()
+            try:
+                if 0 < length <= 65536:
+                    self.connection.settimeout(1.0)
+                    self.rfile.read(length)
+            except OSError:
+                pass
+            finally:
+                self.connection.settimeout(previous_timeout)
+            self.close_connection = True
+            self.json({"error": message}, status)
+
         def do_GET(self):
             if not self.valid_host():
                 self.json({"error": "Local access only"}, 403)
@@ -167,14 +191,14 @@ def make_server(run_dir, port=8765):
         def do_POST(self):
             allowed = {f"http://127.0.0.1:{self.server.server_port}", f"http://localhost:{self.server.server_port}"}
             if not self.valid_host() or self.headers.get("Origin", next(iter(allowed))) not in allowed:
-                self.json({"error": "Local access only"}, 403)
+                self.reject_post("Local access only", 403)
                 return
             path = urlsplit(self.path).path
             if path not in ("/api/predict", "/api/batch"):
-                self.json({"error": "Not found"}, 404)
+                self.reject_post("Not found", 404)
                 return
             if self.headers.get("Content-Type", "").split(";")[0] != "application/json":
-                self.json({"error": "Expected JSON"}, 415)
+                self.reject_post("Expected JSON", 415)
                 return
             try:
                 length = int(self.headers.get("Content-Length", "0"))
@@ -193,7 +217,7 @@ def make_server(run_dir, port=8765):
 
 def main():
     parser = argparse.ArgumentParser(description="Local VACV SI workbench")
-    parser.add_argument("--run", default="artifacts/augmented-v5")
+    parser.add_argument("--run", default="artifacts/stable-v8")
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
     server = make_server(args.run, args.port)

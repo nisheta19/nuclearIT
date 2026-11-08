@@ -24,6 +24,8 @@ def build(destination):
         files.extend((root / folder).glob(pattern))
     for folder in ("web", "artifacts/baseline-original", "artifacts/nested-v2", "artifacts/kernel-v3", "artifacts/kernel-v3-review", "artifacts/advanced-v4", "artifacts/advanced-v4-review", "artifacts/medical-review-v4", "artifacts/augmented-v5", "artifacts/augmented-v5-review", "data/external/approved-2026-11-08", "data/prepared/hackathon-2026-11-08", "data/review/final_handoff_2026-11-08"):
         files.extend(p for p in (root / folder).rglob("*") if p.is_file() and "__pycache__" not in p.parts)
+    for folder in ('artifacts/similarity-v6','artifacts/similarity-v6-review','artifacts/stable-v7','artifacts/stable-v7-review','artifacts/stable-v8','artifacts/stable-v8-review'):
+        files.extend(p for p in (root / folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts)
     files = [path for path in files if path.suffix.lower() != '.pdf']
     for path in files:
         if not path.is_file():
@@ -42,5 +44,5 @@ def build(destination):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("output", nargs="?", default="dist/vacv-workbench-v5.zip")
+    parser.add_argument("output", nargs="?", default="dist/vacv-workbench-v8.zip")
     print(build(parser.parse_args().output))
